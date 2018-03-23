@@ -1,0 +1,75 @@
+---
+output:
+  html_document:
+    keep_md: yes
+    mathjax: null
+    md_extensions: +tex_math_double_backslash
+    pandoc_args: [
+      "--webtex=https://chart.googleapis.com/chart?cht=tx&chl=", ""
+    ]
+  pdf_document:
+    md_extensions: +tex_math_double_backslash
+  word_document:
+    md_extensions: +tex_math_double_backslash
+params:
+  a:
+    input: slider
+    label: This is a
+    max: 50
+    min: 1
+    step: 3
+    value: 40
+  b:
+    input: slider
+    label: This is b
+    max: 80
+    min: 50
+    step: 1
+    value: 60
+  c:
+    input: numeric
+    label: This is c
+    max: 80
+    min: 50
+    step: 5
+    value: 75
+  gender:
+    choices:
+    - male
+    - female
+    inline: yes
+    input: radio
+    label: 'Gender:'
+    value: male
+  region:
+    choices:
+    - east
+    - west
+    - north
+    - south
+    input: select
+    label: 'Region:'
+    value: north
+  word:
+    input: text
+    label: 'Word of the day:'
+    placeholder: Type the word of the day
+    value: 'nothing'
+---
+
+adfadsf
+ Inline style double backslash paren style \\(\frac{3}{4}\\) blah
+
+   Inline code style  backslash paren style \\(\frac{`r params$a`}{4}\\)
+
+$$
+`r {
+    x<-params$a; 
+    mu<-params$b; 
+    numer<-(x-mu); 
+    sigma<-1.2; 
+    z<-(x-mu)/sigma
+    sprintf("z=\\frac{x-\\mu}{\\sigma}=\\frac{%s-%s}{%s}=\\frac{%s}{%s}=%s",
+                                                x,mu,sigma,numer,sigma,z)
+   }`
+$$
