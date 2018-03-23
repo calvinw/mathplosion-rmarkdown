@@ -1,6 +1,9 @@
 ---
-output:
-  html_document:
+title: "Standard Normal Curve Area Between"
+author: "Calvin Williamson"
+date: 2015-07-23T21:13:14-05:00
+categories: ["R"]
+tags: ["z-distribution"] 
 params:
   a:
     input: numeric
@@ -8,7 +11,7 @@ params:
     max: 3.5
     min: -3.5
     step: .1
-    value: -1.2
+    value: -1.5
   b:
     input: numeric
     label: b
@@ -36,7 +39,7 @@ We are going to find the area between the two z-values by using the standard nor
 
 Here $a =`r a`$ and $b =`r b`$
 
-Here is a picture of the area that we want.
+Here is a picture of the area that we want. D
 
 ```{r area, echo=FALSE}
 #change dev to svg if need to

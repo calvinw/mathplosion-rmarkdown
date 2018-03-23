@@ -1,5 +1,9 @@
 ---
-title: ""
+title: "Area Under Normal Curve"
+author: "Calvin Williamson"
+date: 2015-07-23T21:13:14-05:00
+categories: ["R"]
+tags: ["area"] 
 output:
   html_document: default
   pdf_document: default
