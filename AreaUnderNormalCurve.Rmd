@@ -1,28 +1,25 @@
 ---
-title: "Area Under Normal Curve"
-author: "Calvin Williamson"
-date: 2015-07-23T21:13:14-05:00
-categories: ["R"]
-tags: ["area"] 
+Title: "Area Under Normal Curve"
 output:
   html_document: default
-  pdf_document: default
-  word_document: default
+params: 
+  a: -1.2
+  b: 1.58 
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+#knitr::opts_chunk$set(echo = TRUE)
 library(ggplot2)
 dnorm_limit <- function(x) {
  y <- dnorm(x)
- y[x < -1.2 | x > 1.53] <- NA
+ y[x < params$a | x > params$b] <- NA
  return(y)
 }
 ```
 
 ## Area Under Standard Normal Curve
 
-Here we find the area under the curve between x = -1.2 and x=1.53:
+Here we find the area under the curve between z=`r params$a` and z=`r params$b`:
 
 ```{r area, echo=FALSE}
 #change dev to svg if need to
@@ -34,6 +31,6 @@ labs(x = "z", y = "") +
 geom_hline(yintercept=0) +
 scale_x_continuous(breaks = seq(-3, 3, by = 1.0)) +
 scale_y_continuous(breaks = seq(0, .4, by = 0.2)) +
-annotate("text", x = 1.5, y = -0.01, label = "z=1.53") +
-annotate("text", x = -1.2, y = -0.01, label = "z=-1.2")
+annotate("text", x = params$b, y = -0.01, label = sprintf("z=%s", params$b)) +
+annotate("text", x = params$a, y = -0.01, label = sprintf("z=%s", params$a))
 ```
