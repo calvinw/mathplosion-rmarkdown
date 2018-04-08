@@ -9,4 +9,4 @@ clean :
 	rm -f $(HTML_FILES) 
 
 %.html : %.Rmd
-	Rscript -e 'rmarkdown::render("$<")'
+	/opt/R/3.4.4/lib/R/bin/Rscript -e 'rmarkdown::render("$<")'

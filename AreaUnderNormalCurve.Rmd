@@ -4,7 +4,7 @@ output:
   html_document: default
 params: 
   a: -1.2
-  b: 1.58 
+  b: 0.5
 ---
 
 ```{r setup, include=FALSE}
@@ -19,7 +19,7 @@ dnorm_limit <- function(x) {
 
 ## Area Under Standard Normal Curve
 
-Here we find the area under the curve between z=`r params$a` and z=`r params$b`:
+Here we find the area under the curve between z=`r params$a` and z=`r params$b`. We find the left tail area up to the right most z-value, then the left tail area up to thte left most z-value.... W
 
 ```{r area, echo=FALSE}
 #change dev to svg if need to
