@@ -1,16 +1,11 @@
 ---
 output:
   html_document:
-    keep_md: yes
     mathjax: null
-    md_extensions: +tex_math_double_backslash
+    theme: sandstone 
     pandoc_args: [
-      "--webtex=https://chart.googleapis.com/chart?cht=tx&chl=", ""
+      "--webtex=http://chart.googleapis.com/chart?cht=tx&chl="
     ]
-  pdf_document:
-    md_extensions: +tex_math_double_backslash
-  word_document:
-    md_extensions: +tex_math_double_backslash
 params:
   a:
     input: slider
@@ -57,19 +52,19 @@ params:
     value: 'nothing'
 ---
 
-adfadsf
- Inline style double backslash paren style \\(\frac{3}{4}\\) blah
-
-   Inline code style  backslash paren style \\(\frac{`r params$a`}{4}\\)
+```{r area, echo=FALSE}
+plot(cars)
+```
+What is the meaning of this bizarre slogan? $\frac{2}{3}$. We will never know. Hello there!!!!!
 
 $$
 `r {
-    x<-params$a; 
-    mu<-params$b; 
-    numer<-(x-mu); 
-    sigma<-1.2; 
-    z<-(x-mu)/sigma
-    sprintf("z=\\frac{x-\\mu}{\\sigma}=\\frac{%s-%s}{%s}=\\frac{%s}{%s}=%s",
-                                                x,mu,sigma,numer,sigma,z)
+    a<-params$a; 
+    b<-params$b; 
+    c<-params$c; 
+    z<-(a-b)/c
+    sprintf("z=\\frac{a-b}{c}=\\frac{%s-%s}{%s}", a,b,c)
    }`
 $$
+
+But we will know other things...

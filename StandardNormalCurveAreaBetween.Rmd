@@ -1,7 +1,5 @@
 ---
 title: "Standard Normal Curve Area Between"
-author: "Calvin Williamson"
-date: 2015-07-23T21:13:14-05:00
 categories: ["R"]
 tags: ["z-distribution"] 
 params:
@@ -18,7 +16,7 @@ params:
     max: 3.5
     min: -3.5
     step: .1
-    value: 0.5
+    value: 2.0 
 ---
 
 ```{r setup, include=FALSE}
@@ -39,7 +37,7 @@ We are going to find the area between the two z-values by using the standard nor
 
 Here $a =`r a`$ and $b =`r b`$
 
-Here is a picture of the area that we want. D
+Here is a picture of the area that we want:
 
 ```{r area, echo=FALSE}
 #change dev to svg if need to
@@ -60,7 +58,7 @@ First we find the left tail area for z-value on the right: $b =`r b`$
 $$
 `r {
     areaB <- round(pnorm(b),4)
-    sprintf("left tail area=%s",areaB)
+    sprintf("\\text{left tail area}=%s",areaB)
    }`
 $$
 
@@ -69,7 +67,7 @@ Then we find the left tail area for the z-value on the left $a =`r a`$:
 $$
 `r {
     areaA <- round(pnorm(a),4)
-    sprintf("left tail area=%s",areaA)
+    sprintf("\\text{left tail area}=%s",areaA)
    }`
 $$
 
@@ -78,6 +76,6 @@ Finally we find the area between the two z-values by subtracting the left tail a
 $$
 `r {
     area <- round(areaB - areaA,4)
-    sprintf("area between=%s-%s=%s",areaB,areaA,area)
+    sprintf("\\text{area between}=%s-%s=%s",areaB,areaA,area)
    }`
 $$
