@@ -55,6 +55,7 @@ params:
 ```{r area, echo=FALSE}
 plot(cars)
 ```
+  
 What is the meaning of this bizarre slogan? $\frac{2}{3}$. We will never know. Hello there!!!!!
 
 $$
@@ -66,5 +67,5 @@ $$
     sprintf("z=\\frac{a-b}{c}=\\frac{%s-%s}{%s}", a,b,c)
    }`
 $$
-
+  
 But we will know other things...

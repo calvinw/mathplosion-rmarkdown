@@ -1,0 +1,15 @@
+##Area under a normal curve
+This one finds the area under a normal curve:   
+
+[Rmarkdown Source](AreaUnderNormalCurve.Rmd)
+  
+[Area Under Normal Curve](AreaUnderNormalCurve.html)  
+
+##Standard Normal Curve Area Between
+[Standard Normal Curve Area Between](StandardNormalCurveAreaBetween.html)
+
+##Google Chart Image Latex
+[Google Chart Image Latex](GoogleChartImageLatex.html)
+
+StdNormalCurveAreaBetween.Rmd
+NormalCurveAreaBetween.Rmd
