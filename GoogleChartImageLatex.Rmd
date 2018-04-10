@@ -2,7 +2,6 @@
 output:
   html_document:
     mathjax: null
-    theme: sandstone 
     pandoc_args: [
       "--webtex=http://chart.googleapis.com/chart?cht=tx&chl="
     ]
@@ -13,59 +12,38 @@ params:
     max: 50
     min: 1
     step: 3
-    value: 40
+    value: 12
   b:
     input: slider
     label: This is b
-    max: 80
-    min: 50
-    step: 1
-    value: 60
-  c:
-    input: numeric
-    label: This is c
-    max: 80
-    min: 50
-    step: 5
-    value: 75
-  gender:
-    choices:
-    - male
-    - female
-    inline: yes
-    input: radio
-    label: 'Gender:'
-    value: male
-  region:
-    choices:
-    - east
-    - west
-    - north
-    - south
-    input: select
-    label: 'Region:'
-    value: north
-  word:
-    input: text
-    label: 'Word of the day:'
-    placeholder: Type the word of the day
-    value: 'nothing'
+    max: 50
+    min: 1
+    step: 3
+    value: 45
 ---
+
+```{r params, echo=FALSE}
+    a<-params$a; 
+    b<-params$b; 
+```
+
+This example shows creating of data URL versions of images for graphics and formulas. Use the webtex argument to pandoc to point to the service that will make the graphics.
+
+This is good for copying and pasting into some email clients (gmail,etc)
+
+
+Display LaTeX rendered at data URL images:  
+
+$$
+z =\frac{a}{b}
+  =\frac{`r a`}{`r b`}
+$$
+
+Inline LaTeX as data URL image: $z = b - a =`r b`-`r a` = `r b-a`$ Text after on same line  
+
+Finally below is a dataURL embedded image:  
 
 ```{r area, echo=FALSE}
 plot(cars)
 ```
-  
-What is the meaning of this bizarre slogan? $\frac{2}{3}$. We will never know. Hello there!!!!!
 
-$$
-`r {
-    a<-params$a; 
-    b<-params$b; 
-    c<-params$c; 
-    z<-(a-b)/c
-    sprintf("z=\\frac{a-b}{c}=\\frac{%s-%s}{%s}", a,b,c)
-   }`
-$$
-  
-But we will know other things...
