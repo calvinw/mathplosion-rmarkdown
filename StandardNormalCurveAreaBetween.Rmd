@@ -55,27 +55,27 @@ annotate("text", x = b, y = -0.01, label = sprintf("b = %s",b))
 
 First we find the left tail area for z-value on the right: $b =`r b`$
 
+```{r areab, echo = FALSE}
+areab <- round(pnorm(b),4)
+```
 $$
-`r {
-    areaB <- round(pnorm(b),4)
-    sprintf("\\text{left tail area}=%s",areaB)
-   }`
+\text{left tail area for b} = `r areab`
 $$
 
 Then we find the left tail area for the z-value on the left $a =`r a`$:
 
+```{r areaa, echo = FALSE}
+areaa <- round(pnorm(a),4)
+```
 $$
-`r {
-    areaA <- round(pnorm(a),4)
-    sprintf("\\text{left tail area}=%s",areaA)
-   }`
+\text{left tail area for a} = `r areaa`
 $$
 
 Finally we find the area between the two z-values by subtracting the left tail area up to b by the left tail area up to a. This leaves us with the area between the two z-values:
 
 $$
 `r {
-    area <- round(areaB - areaA,4)
-    sprintf("\\text{area between}=%s-%s=%s",areaB,areaA,area)
+    area <- round(areab - areaa,4)
+    sprintf("\\text{area between}=%s-%s=%s",areab,areaa,area)
    }`
 $$
