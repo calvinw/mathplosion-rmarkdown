@@ -9,14 +9,14 @@ params:
     max: 3.5
     min: -3.5
     step: .1
-    value: 1.1
+    value: 1.0
   b:
     input: numeric
     label: b
     max: 3.5
     min: -3.5
     step: .1
-    value: 2.05 
+    value: 2.5 
 ---
 
 ```{r setup, include=FALSE}
@@ -47,7 +47,7 @@ stat_function(fun=dnorm_limit, geom="area", fill="blue", alpha=0.5) +
 stat_function(fun=dnorm) +
 labs(x = "Z", y = "") +
 geom_hline(yintercept=0) +
-scale_x_continuous(breaks = seq(-3, 3, by = 1.0)) +
+scale_x_continuous(breaks = seq(-3, 3, by = .5)) +
 scale_y_continuous(breaks = seq(0, .4, by = 0.2)) +
 annotate("text", x = a, y = -0.01, label = sprintf("a = %s",a)) +
 annotate("text", x = b, y = -0.01, label = sprintf("b = %s",b))
@@ -74,8 +74,5 @@ $$
 Finally we find the area between the two z-values by subtracting the left tail area up to b by the left tail area up to a. This leaves us with the area between the two z-values:
 
 $$
-`r {
-    area <- round(areab - areaa,4)
-    sprintf("\\text{area between}=%s-%s=%s",areab,areaa,area)
-   }`
+\text{area between}=`r areab` - `r areaa`=`r round(areab-areaa, 4)`
 $$
