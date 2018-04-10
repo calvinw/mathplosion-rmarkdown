@@ -9,14 +9,14 @@ params:
     max: 3.5
     min: -3.5
     step: .1
-    value: -1.5
+    value: 1.1
   b:
     input: numeric
     label: b
     max: 3.5
     min: -3.5
     step: .1
-    value: 2.0 
+    value: 2.05 
 ---
 
 ```{r setup, include=FALSE}

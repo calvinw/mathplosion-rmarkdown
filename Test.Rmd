@@ -1,0 +1,107 @@
+---
+Title: "Test Problem"
+output:
+  html_document: 
+    default
+params:
+  x:
+    input: slider
+    label: This is x 
+    max: 50
+    min: 1
+    step: 3
+    value: 40
+  mu:
+    input: slider
+    label: This is mu 
+    max: 80
+    min: 50
+    step: 1
+    value: 60
+  sigma:
+    input: numeric
+    label: This is sigma 
+    max: 20 
+    min: 0 
+    step: 1 
+    value: 5 
+  gender:
+    choices:
+    - male
+    - female
+    inline: yes
+    input: radio
+    label: 'Gender:'
+    value: male
+  region:
+    choices:
+    - east
+    - west
+    - north
+    - south
+    input: select
+    label: 'Region:'
+    value: north
+  word:
+    input: text
+    label: 'Word of the day:'
+    placeholder: Type the word of the day
+    value: 'nothing'
+---
+
+```{r params, echo=FALSE}
+    x<-params$x; 
+    mu<-params$mu; 
+    sigma<-params$sigma; 
+```
+## Test Header 1  
+
+The below shows we can run R code. Here we look at the cars dataset:   
+
+```{r summary}
+str(cars)
+summary(cars)
+```
+Test that we can access the params from the header:  
+
+```{r printparams}
+x
+mu
+sigma
+```
+Next show that we can embed plots.
+
+```{r plot, echo=FALSE}
+plot(cars)
+```
+  
+Test that we can do inline r expressions:   
+
+The value of x is: `r x` This still on same line.   
+The value of mu is: `r mu` This still on same line.   
+
+Test that we can do static inline LaTeX with dollar sign: $\frac{2}{3}$. This text is after.     
+
+And try to do static display math LaTeX with double dollar signs:  
+
+$$
+z=\frac{x-\mu}{\sigma}
+$$
+
+Next dynamic inline LaTeX with dollar sign: $z=\frac{`r x`-`r mu`}{`r sigma`}$. This is after.  
+
+Next dynamic display LaTeX using the params:
+
+$$
+z = \frac{x-\mu}{\sigma}
+  = \frac{`r x`- `r mu`}{`r sigma`}
+$$
+
+Here is some dynamicly evaluated display LaTeX:  
+
+$$
+z = \frac{x-\mu}{\sigma}
+  = \frac{`r x` - `r mu`}{`r sigma`}
+  = \frac{`r x-mu`}{`r sigma`}
+  = `r (x-mu)/sigma`
+$$
