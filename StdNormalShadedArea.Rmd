@@ -1,5 +1,5 @@
 ---
-Title: "Area Under Normal Curve"
+Title: "Shaded Area Under Standard Normal Curve"
 output:
   html_document: default
 params: 
@@ -13,9 +13,9 @@ a <- params$a
 b <- params$b
 ```
 
-## Area Under Standard Normal Curve
+## Shaded Area Under Standard Normal Curve
 
-Here we find the area under the curve between $z=`r a`$ and $z=`r b`$. We find the left tail area up to the right most z-value, then the left tail area up to thte left most z-value.... This is the most important thing I have ever done...!!!
+Here we show the area under the curve between $z=`r a`$ and $z=`r b`$:
 
 ```{r area, echo=FALSE}
 dat <- data.frame(x=c(-3.5, 3.5))
@@ -29,3 +29,5 @@ ggplot(dat, aes(x=x)) +
   annotate("text", x = b, y = -0.01, label = sprintf("z=%s", b)) +
   annotate("text", x = a, y = -0.01, label = sprintf("z=%s", a))
 ```
+
+Its great!

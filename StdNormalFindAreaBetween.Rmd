@@ -24,11 +24,6 @@ knitr::opts_chunk$set(echo = TRUE)
 a<-params$a
 b<-params$b
 library(ggplot2)
-dnorm_limit <- function(x) {
- y <- dnorm(x)
- y[x < a | x > b] <- NA
- return(y)
-}
 ```
 
 ## Area under normal curve between two values
@@ -41,38 +36,51 @@ Here is a picture of the area that we want:
 
 ```{r area, echo=FALSE}
 #change dev to svg if need to
+
 dat <- data.frame(x=c(-3.5, 3.5))
+labelA <- sprintf("a = %s",a)
+labelB <- sprintf("b = %s",b)
 ggplot(dat, aes(x=x)) +
-stat_function(fun=dnorm_limit, geom="area", fill="blue", alpha=0.5) +
-stat_function(fun=dnorm) +
-labs(x = "Z", y = "") +
-geom_hline(yintercept=0) +
-scale_x_continuous(breaks = seq(-3, 3, by = .5)) +
-scale_y_continuous(breaks = seq(0, .4, by = 0.2)) +
-annotate("text", x = a, y = -0.01, label = sprintf("a = %s",a)) +
-annotate("text", x = b, y = -0.01, label = sprintf("b = %s",b))
+	stat_function(fun=dnorm) +   
+	stat_function(fun=dnorm,     
+		      xlim = c(a,b), 
+		      geom="area", 
+		      fill="green", 
+		      alpha=0.3) +
+	labs(x = "Z", y = "") +       
+	geom_hline(yintercept=0) +
+	scale_x_continuous(breaks = seq(-3, 3, by = .5)) +
+	scale_y_continuous(breaks = seq(0, .4, by = 0.2)) +
+	annotate("text", 
+		 x = a, 
+		 y = -0.01, 
+		 label = labelA) +
+	annotate("text", 
+		 x = b, 
+		 y = -0.01, 
+		 label = labelB)
 ```
 
 First we find the left tail area for z-value on the right: $b =`r b`$
 
 ```{r areab, echo = FALSE}
-areab <- round(pnorm(b),4)
+areaB <- round(pnorm(b),4)
 ```
 $$
-\text{left tail area for b} = `r areab`
+\text{left tail area for b} = `r areaB`
 $$
 
 Then we find the left tail area for the z-value on the left $a =`r a`$:
 
-```{r areaa, echo = FALSE}
-areaa <- round(pnorm(a),4)
+```{r areaA, echo = FALSE}
+areaA <- round(pnorm(a),4)
 ```
 $$
-\text{left tail area for a} = `r areaa`
+\text{left tail area for a} = `r areaA`
 $$
 
 Finally we find the area between the two z-values by subtracting the left tail area up to b by the left tail area up to a. This leaves us with the area between the two z-values:
 
 $$
-\text{area between}=`r areab` - `r areaa`=`r round(areab-areaa, 4)`
+\text{area between}=`r areaB` - `r areaA`=`r round(areaB-areaA, 4)`
 $$
