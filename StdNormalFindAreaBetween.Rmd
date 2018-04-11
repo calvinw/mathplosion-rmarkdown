@@ -2,6 +2,8 @@
 title: "Standard Normal Curve Area Between"
 categories: ["R"]
 tags: ["z-distribution"] 
+output:
+  html_document: default
 params:
   a:
     input: numeric
@@ -23,10 +25,13 @@ params:
 knitr::opts_chunk$set(echo = TRUE)
 a<-params$a
 b<-params$b
+b
 library(ggplot2)
 ```
 
 ## Area under normal curve between two values
+
+Hi
 
 We are going to find the area between the two z-values by using the standard normal (z) table:
 
@@ -49,7 +54,7 @@ ggplot(dat, aes(x=x)) +
 		      alpha=0.3) +
 	labs(x = "Z", y = "") +       
 	geom_hline(yintercept=0) +
-	scale_x_continuous(breaks = seq(-3, 3, by = .5)) +
+	scale_x_continuous(breaks = seq(-3, 3, by = 1.0)) +
 	scale_y_continuous(breaks = seq(0, .4, by = 0.2)) +
 	annotate("text", 
 		 x = a, 
