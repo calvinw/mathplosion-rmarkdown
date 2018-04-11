@@ -1,8 +1,8 @@
-##Simple
+##Test Problem
 Just shows some simple techniques.
 
-Rendered: [Html](Simple.html)  
-Source: [Rmd](Simple.Rmd) 
+Rendered: [Html](Test.html)  
+Source: [Rmd](Test.Rmd) 
 
 ##Standard Normal Shaded Area
 This one shows the area between two z-values.  

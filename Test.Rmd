@@ -50,33 +50,32 @@ params:
 ---
 
 ```{r params, echo=FALSE}
+# in this code block we just set x,mu,sigma so we can use them below.
     x<-params$x; 
     mu<-params$mu; 
     sigma<-params$sigma; 
 ```
 ## Test Header 1  
 
-The below shows we can run R code. Here we look at the cars dataset:   
+The code block shows we can run R code. Cars is one of the built in data sets in R, so we just show that we can print out some descriptive statistics about the data set:   
 
 ```{r summary}
-str(cars)
 summary(cars)
 ```
-Test that we can access the params from the header:  
+This just shows the params we set in the params block:  
 
 ```{r printparams}
 x
 mu
 sigma
 ```
-Next show that we can embed plots.
+Another example that shows we can produce graphics. We plot a scatterplot for the cars dataset.
 
 ```{r plot, echo=FALSE}
 plot(cars)
 ```
   
-Test that we can do inline r expressions:   
-
+Next we demostrate inline R expressions. Anything enclosed with backticks that starts with r will be executed as the rmarkdown is rendered. So the lines below should just print out the values of the parameters inline.     
 The value of x is: `r x` This still on same line.   
 The value of mu is: `r mu` This still on same line.   
 
