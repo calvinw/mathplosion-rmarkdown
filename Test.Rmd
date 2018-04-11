@@ -54,7 +54,7 @@ params:
     mu<-params$mu; 
     sigma<-params$sigma; 
 ```
-## Test Header 1  
+## Test Problem 
 
 The code block shows we can run R code. Cars is one of the built in data sets in R, so we just show that we can print out some descriptive statistics about the cars data set.   
 
