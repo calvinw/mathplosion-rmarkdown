@@ -1,11 +1,6 @@
 ---
 output:
-  html_document:
-    md_extensions: +tex_math_double_backslash
-  pdf_document:
-    md_extensions: +tex_math_double_backslash
-  word_document:
-    md_extensions: +tex_math_double_backslash
+  html_document: default
 params:
   a:
     input: slider

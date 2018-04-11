@@ -1,4 +1,5 @@
 ---
+title: "Image Latex Demo"
 output:
   html_document:
     mathjax: null
@@ -27,10 +28,9 @@ params:
     b<-params$b; 
 ```
 
-This example shows creating of data URL versions of images for graphics and formulas. Use the webtex argument to pandoc to point to the service that will make the graphics.
+This example shows creating data URL versions of images for graphics and formulas. Use the webtex argument to pandoc to point to the service that will make the graphics.  
 
-This is good for copying and pasting into some email clients (gmail,etc)
-
+This is good for copying and pasting into some email clients (gmail,etc)  
 
 Display LaTeX rendered at data URL images:  
 
@@ -38,6 +38,8 @@ $$
 z =\frac{a}{b}
   =\frac{`r a`}{`r b`}
 $$
+
+Why is the above rendered on the left side, instead of the middle?
 
 Inline LaTeX as data URL image: $z = b - a =`r b`-`r a` = `r b-a`$ Text after on same line  
 

@@ -1,8 +1,7 @@
 ---
 Title: "Test Problem"
 output:
-  html_document: 
-    default
+  html_document: default
 params:
   x:
     input: slider
@@ -57,7 +56,7 @@ params:
 ```
 ## Test Header 1  
 
-The code block shows we can run R code. Cars is one of the built in data sets in R, so we just show that we can print out some descriptive statistics about the data set:   
+The code block shows we can run R code. Cars is one of the built in data sets in R, so we just show that we can print out some descriptive statistics about the cars data set.   
 
 ```{r summary}
 summary(cars)
@@ -76,8 +75,10 @@ plot(cars)
 ```
   
 Next we demostrate inline R expressions. Anything enclosed with backticks that starts with r will be executed as the rmarkdown is rendered. So the lines below should just print out the values of the parameters inline.     
+
 The value of x is: `r x` This still on same line.   
-The value of mu is: `r mu` This still on same line.   
+
+The value of mu is: `r mu` This still on same line. 
 
 Test that we can do static inline LaTeX with dollar sign: $\frac{2}{3}$. This text is after.     
 

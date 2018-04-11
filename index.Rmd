@@ -16,12 +16,12 @@ This one calculates the area between two z-values.
 Rendered: [Html](StdNormalFindAreaBetween.html)  
 Source: [Rmd](StdNormalFindAreaBetween.Rmd) 
 
-##Google Chart Image Latex
+##Image Latex Demo
 This one uses Google Chart API to create images for LaTeX.  
 This is useful for copy and paste in gmail.  
 
-Rendered: [Html](GoogleChartImageLatex.html)  
-Source: [Rmd](GoogleChartImageLatex.Rmd) 
+Rendered: [Html](ImageLatexDemo.html)  
+Source: [Rmd](ImageLatexDemo.Rmd) 
 
 ##Normal Curve Find Area Between x-values
 This one calculates the area between two x-values.  
