@@ -61,7 +61,7 @@ The code block shows we can run R code. Cars is one of the built in data sets in
 ```{r summary}
 summary(cars)
 ```
-This just shows the params we set in the params block:  
+This just displays the params we set in the params block:  
 
 ```{r printparams}
 x
