@@ -3,8 +3,8 @@ image: r-base
 pages:
   stage: deploy
   script:
-  - make
   - Rscript -e "install.packages('rmarkdown')"
+  - make
   - mkdir .public
   - cp -r * .public
   - mv .public public
