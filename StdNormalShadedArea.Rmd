@@ -30,4 +30,4 @@ ggplot(dat, aes(x=x)) +
   annotate("text", x = a, y = -0.01, label = sprintf("z=%s", a))
 ```
 
-Its great!
+Its great very great...very great!
