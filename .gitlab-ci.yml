@@ -3,6 +3,7 @@ image: r-base
 pages:
   stage: deploy
   script:
+  - make
   - mkdir .public
   - cp -r * .public
   - mv .public public
