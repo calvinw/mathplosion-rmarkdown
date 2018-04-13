@@ -41,3 +41,9 @@ This one is not working yet.
 Rendered: [Html](NormalCurveAreaBetween.html)  
 Source: [Rmd](NormalCurveAreaBetween.Rmd) 
 
+##Z table example
+This package allows creating nice tables (styled by bootstrap)  
+
+[kable package examples using R](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html)
+
+
