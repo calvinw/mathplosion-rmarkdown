@@ -4,7 +4,7 @@ pages:
   stage: deploy
   script:
   - apt-get update 
-  - apt-get install pandoc
+  - apt-get -y install pandoc
   - Rscript -e "install.packages('rmarkdown')"
   - make
   - mkdir .public
