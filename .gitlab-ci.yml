@@ -6,6 +6,7 @@ pages:
   - apt-get update 
   - apt-get -y install pandoc
   - Rscript -e "install.packages('rmarkdown')"
+  - Rscript -e "install.packages('ggplot2')"
   - make
   - mkdir .public
   - cp -r * .public
