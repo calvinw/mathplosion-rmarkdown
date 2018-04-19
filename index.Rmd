@@ -1,13 +1,9 @@
-##Resources for learning:
 
-Basic R:  
-[Free Intro to R Datacamp](https://www.datacamp.com/courses/free-introduction-to-r) 
+##Z Table Example
+This one shows how to make a table. 
 
-Elementary stat and R:  
-[Data Analysis and Statistical Inference](https://www.datacamp.com/community/open-courses/statistical-inference-and-data-analysis) 
-
-Shiny and R  
-[Building Web Applications in R with Shiny](https://www.datacamp.com/courses/building-web-applications-in-r-with-shiny)
+Rendered: [Html](Table.html)  
+Source: [Rmd](Table.Rmd) 
 
 ##Test Problem
 Just shows some simple techniques.
@@ -41,9 +37,15 @@ This one is not working yet.
 Rendered: [Html](NormalCurveAreaBetween.html)  
 Source: [Rmd](NormalCurveAreaBetween.Rmd) 
 
-##Z table example
-This package allows creating nice tables (styled by bootstrap)  
 
-[kable package examples using R](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html)
+##Resources for learning:
 
+Basic R:  
+[Free Intro to R Datacamp](https://www.datacamp.com/courses/free-introduction-to-r) 
+
+Elementary stat and R:  
+[Data Analysis and Statistical Inference](https://www.datacamp.com/community/open-courses/statistical-inference-and-data-analysis) 
+
+Shiny and R  
+[Building Web Applications in R with Shiny](https://www.datacamp.com/courses/building-web-applications-in-r-with-shiny)
 
