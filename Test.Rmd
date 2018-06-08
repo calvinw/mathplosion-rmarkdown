@@ -1,107 +1,27 @@
----
-Title: "Test Problem"
-output:
-  html_document: default
-params:
-  x:
-    input: slider
-    label: This is x 
-    max: 50
-    min: 1
-    step: 3
-    value: 40
-  mu:
-    input: slider
-    label: This is mu 
-    max: 80
-    min: 50
-    step: 1
-    value: 60
-  sigma:
-    input: numeric
-    label: This is sigma 
-    max: 20 
-    min: 0 
-    step: 1 
-    value: 5 
-  gender:
-    choices:
-    - male
-    - female
-    inline: yes
-    input: radio
-    label: 'Gender:'
-    value: male
-  region:
-    choices:
-    - east
-    - west
-    - north
-    - south
-    input: select
-    label: 'Region:'
-    value: north
-  word:
-    input: text
-    label: 'Word of the day:'
-    placeholder: Type the word of the day
-    value: 'nothing'
----
+# Problem is the best ... 
 
-```{r params, echo=FALSE}
-# in this code block we just set x,mu,sigma so we can use them below.
-    x<-params$x; 
-    mu<-params$mu; 
-    sigma<-params$sigma; 
-```
-## Test Problem 
-
-The code block shows we can run R code. Cars is one of the built in data sets in R, so we just show that we can print out some descriptive statistics about the cars data set.   
-
-```{r summary}
-summary(cars)
-```
-This just displays the params we set in the params block:  
-
-```{r printparams}
-x
-mu
-sigma
-```
-Another example that shows we can produce graphics. We plot a scatterplot for the cars dataset.
-
-```{r plot, echo=FALSE}
-plot(cars)
-```
-  
-Next we demostrate inline R expressions. Anything enclosed with backticks that starts with r will be executed as the rmarkdown is rendered. So the lines below should just print out the values of the parameters inline.     
-
-The value of x is: `r x` This still on same line.   
-
-The value of mu is: `r mu` This still on same line. 
-
-Test that we can do static inline LaTeX with dollar sign: $\frac{2}{3}$. This text is after.     
-
-And try to do static display math LaTeX with double dollar signs:  
-
-$$
-z=\frac{x-\mu}{\sigma}
-$$
-
-Next dynamic inline LaTeX with dollar sign: $z=\frac{`r x`-`r mu`}{`r sigma`}$. This is after.  
-
-Next dynamic display LaTeX using the params:
+ASdasfjka regular text and this is some display math: 
 
 $$
 z = \frac{x-\mu}{\sigma}
-  = \frac{`r x`- `r mu`}{`r sigma`}
-$$
+$$ 
 
-Here is some dynamicly evaluated display LaTeX:  
+Inline math \\(\frac{2}{3}\\) which which should be 2/3.
+
+Here is some display math that has inline r expressions: 
 
 $$
-z = \frac{x-\mu}{\sigma}
-  = \frac{`r x` - `r mu`}{`r sigma`}
-  = \frac{`r x-mu`}{`r sigma`}
-  = `r (x-mu)/sigma`
-$$
+\frac{x}{4}=\frac{`r 2`}{4} = `r 3/4` 
+$$ 
+
+An inline r expression... `r 2+3`... which should be 6. 
+
+Here is inline math with inline r expression... \\(\frac{`r 3`}{2}\\)... it should be input$x/2: 
+
+# Here is a code block:
+
+```{r hello, collapse=TRUE} 
+hist(runif(10)) 
+```
+
+# XXXXXXXXXXXXXXXXXXThats is all!!!
