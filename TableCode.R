@@ -1,23 +1,5 @@
----
-Title: Standard Normal LookUp
-output:
-  html_document: default
-params:
-  z:
-    input: slider
-    label: This is Z
-    max: 3.5
-    min: -3.5
-    step: 0.01
-    value: 1.23
----
 
-```{r params, echo=FALSE}
-# in this code block we just set x,mu,sigma so we can use them below.
-z<-params$z; 
-```
 
-```{r tablesetup, echo = FALSE}
 library(knitr)
 
 colTitles <- c(" .00"," .01"," .02"," .03"," .04"," .05"," .06"," .07"," .08"," .09")
@@ -37,7 +19,7 @@ for(i in 1:numRows) {
 # left tail areas like '0.9324' 
 posZAreas <- format(round(pnorm(posZValues),4),nsmall=4)
 
-# Has format '0.3742', so this lops off the '0' at start.
+# remove the leading 0, so now '.9324' 
 posZAreas <- substring(posZAreas, 2)
 
 # eg this is .1, .2, .3, ..., 3.0 
@@ -53,7 +35,6 @@ for(i in 1:numRows) {
     negZValues[i, j] = (numRows-i)*(-.1) - (j-1)*(.01)
   }
 }
-
 negZAreas <- format(round(pnorm(negZValues),4),nsmall=4)
 negZAreas <- substring(negZAreas, 2)
 
@@ -61,18 +42,19 @@ negZAreas <- substring(negZAreas, 2)
 negRowNames <- seq(-zStartOfLastRow,-.1,by=.1)
 rownames(negZAreas) <- c(negRowNames, "0.0")
 colnames(negZAreas) <- colTitles
-```
 
 ## Standard Normal Table 
 
-First the negative z-values:  
-
-```{r negtable, echo = FALSE}
 kable(negZAreas)
-```
-
-This is second half of the table:
-
-```{r postable, echo = FALSE}
 kable(posZAreas)
-```
+
+# This returns the row and col of the enty 2.13
+which(posZValues == "2.13", arr.ind=TRUE)
+
+# This returns the row and col of the enty -2.13
+whichIndex = which(negZValues == "-2.13", arr.ind=TRUE)
+#this gives the row
+whichIndex[1]
+#this gives the column
+whichIndex[2]
+
