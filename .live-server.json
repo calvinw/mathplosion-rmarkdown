@@ -1,0 +1,7 @@
+{
+  "port": "8181",
+  "host": "0.0.0.0",
+  "open": false,
+  "no-browser": true,
+  "ignore": ["*.Rmd", "*.md"]
+}

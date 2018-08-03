@@ -79,7 +79,7 @@ annotate("text", x = -1.2, y = -0.01, label = "z=-1.2")
 * Parameters
     * a is `r params$a` and the fraction is \\(\frac{`r params$a`}{4}\\)
     * b is `r params$b` \\(\frac{3}{4}\\)
-* blah albh
+* blah what 
 
 # Parameter a is `r params$a` and b is `r params$b` 
 1. The region is `r params$region`

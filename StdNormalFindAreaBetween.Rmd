@@ -18,7 +18,7 @@ params:
     max: 3.5
     min: -3.5
     step: .1
-    value: 2.5 
+    value: -3.5 
 ---
 
 ```{r setup, include=FALSE}

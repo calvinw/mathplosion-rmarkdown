@@ -1,9 +1,9 @@
-# Problem is the best ... 
+# My is the best ... 
 
-ASdasfjka regular text and this is some display math: 
+You can see that this is one of the best things we can do. 
 
 $$
-z = \frac{x-\mu}{\sigma}
+z = \frac{x-\mu}{\sigma} = 54
 $$ 
 
 Inline math \\(\frac{2}{3}\\) which which should be 2/3.
@@ -18,10 +18,10 @@ An inline r expression... `r 2+3`... which should be 6.
 
 Here is inline math with inline r expression... \\(\frac{`r 3`}{2}\\)... it should be input$x/2: 
 
-# Here is a code block:
+##WATATATATAT a code block:
 
 ```{r hello, collapse=TRUE} 
 hist(runif(10)) 
 ```
 
-# XXXXXXXXXXXXXXXXXXThats is all!!!
+# That is it!!!

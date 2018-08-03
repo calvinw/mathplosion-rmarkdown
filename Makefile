@@ -17,14 +17,15 @@ clean :
 #	@echo Calling render...	
 #	Rscript -e 'knitr::knit2html("$<", force_v1 = TRUE)'
 
-refresh: 
-	./refreshChrome.sh
+watchsync: 
+	make -j sync watch
 
-server:
-	@echo Starting server...	
-	python -m SimpleHTTPServer 4000
+sync:
+	@echo Starting browser-sync...	
+	npx browser-sync start --config=bs-config.js
+		
 
 watch:
 	@echo Watching .Rmd files...	
-	@echo Will make and refresh Chrome on changes...	
-	ls Test.Rmd | entr -csp 'make && ./refreshChrome.sh'
+	@echo Will call make on changes...	
+	ls *.Rmd | entr -csp 'make'

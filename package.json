@@ -1,0 +1,25 @@
+{
+  "name": "mathplosion-rmarkdown",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/calvinw/mathplosion-rmarkdown.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/calvinw/mathplosion-rmarkdown/issues"
+  },
+  "homepage": "https://gitlab.com/calvinw/mathplosion-rmarkdown#README",
+  "devDependencies": {
+    "browser-sync": "^2.24.6",
+    "connect-logger": "0.0.1",
+    "live-server": "^1.2.0"
+  }
+}
