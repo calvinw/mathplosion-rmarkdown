@@ -6,10 +6,10 @@ var params = {
     host: "0.0.0.0", 
     root: ".", 
     open: false, 
-    watch: ["*.html"],
+    watch: ["changed.txt"],
 //  ignore: ["Makefile", "*.Rmd", "*.md"],
     file: "index.html", 
-    logLevel: 1, // 0 = errors only, 1 = some, 2 = lots
+    logLevel: 2, // 0 = errors only, 1 = some, 2 = lots
     middleware: [
         function(req, res, next) { 
             //console.log("req.url is " + req.url);  

@@ -4,6 +4,7 @@ export PATH := /usr/bin:/opt/R/3.4.4/lib/R/bin:$(PATH)
 
 all : $(HTML_FILES)
 	@echo All files are now up to date
+	touch changed.txt
 
 clean : 
 	@echo Removing html files...	
@@ -34,6 +35,7 @@ live:
 watch:
 	@echo Watching .Rmd files...	
 	@echo Will call make on changes...	
-	ls *.Rmd | entr -csp 'make'
+	while true; do ls *.Rmd | entr make; done
+#ls *.Rmd | entr -csp make 
 
 .PHONY: all clean live watch watchlive allFiles

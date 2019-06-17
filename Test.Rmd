@@ -1,14 +1,16 @@
-# My is the best ... 
+# My Test little Problem, this is what I want
 
-You can see one of the best things we can do. But I cannot 
+Here is a little _markdown_ and here is some display math:   
 
 $$
-z = \frac{x-\mu}{\sigma} = 54
+z = \frac{x-\mu}{\sigma} = 4
 $$ 
 
-Inline math \\(\frac{2}{3}\\) which which should be 2/3.
+Now here is some inline math \(\frac{2}{3}\) which should be 2/3.
 
-Here is some display math inline r expressions: 
+Help me, Help me!!!
+
+Here is some display math inline r expressions:   
 
 $$
 \frac{x}{4}=\frac{`r 2`}{4} = `r 3/4` 
@@ -18,12 +20,12 @@ An inline r expression... `r 2+3`... which should be 6.
 
 Here is inline math with inline r expression... \\(\frac{`r 3`}{2}\\)... it should be input$x/2: 
 
-```{r uniform, collapse=TRUE}
+```{r uniform, echo=FALSE, collapse=TRUE}
 hist(runif(10)) 
 ```
 
 # That is it!!!
 
-```{r rnorm, collapse=TRUE}
+```{r rnorm, echo=FALSE, collapse=TRUE}
 hist(rnorm(10)) 
 ```

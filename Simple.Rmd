@@ -57,11 +57,11 @@ dnorm_limit <- function(x) {
 }
 ```
 
-## R Markdown
+## This is an area problem dafsadf 
 
-You can also embed plots, for example:
+ou can also embed plots, for example here are some:
 
-```{r}
+```{r, echo=FALSE, collapse=TRUE}
 params$a
 params$b
 ```
@@ -95,9 +95,9 @@ annotate("text", x = -1.2, y = -0.01, label = "z=-1.2")
     2. number 2 on the ordered sublist
 4. The word of the day is: `r params$word`.
 
-   Inline style double backslash paren style \\(\frac{3}{4}\\) blah
+   Inline style double backslash paren style \(\frac{3}{4}\) blah
 
-   Inline code style  backslash paren style \\(\frac{`r params$a`}{4}\\)
+   Inline code style  backslash paren style \(\frac{`r params$a`}{4}\)
 
 $$
 `r {
