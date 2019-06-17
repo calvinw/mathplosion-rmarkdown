@@ -59,7 +59,12 @@ dnorm_limit <- function(x) {
 
 ## R Markdown
 
-See...You can also embed plots, for example:
+You can also embed plots, for example:
+
+```{r}
+params$a
+params$b
+```
 
 ```{r area, echo=FALSE}
 #change dev to svg if need to
@@ -106,3 +111,4 @@ $$
    }`
 $$
 
+Can you believe it... no I cannot

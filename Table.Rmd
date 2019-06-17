@@ -65,7 +65,7 @@ colnames(negZAreas) <- colTitles
 
 ## Standard Normal Table 
 
-First the negative z-values:  
+First find the negative z-values:  
 
 ```{r negtable, echo = FALSE}
 kable(negZAreas)

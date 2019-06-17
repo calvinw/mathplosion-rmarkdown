@@ -1,3 +1,19 @@
+path = require("path");
+
+var mymiddleware = function(req,res,next) {
+            console.log("req.url is " + req.url);  
+
+            //Fix the content type and dispositon of Rmd files - ugh!
+            if(path.extname(req.url) === ".Rmd") {
+              var basename = path.basename(req.url);
+              var header = 'inline; filename="' + basename + '"';
+              console.log("header is " + header);
+              res.setHeader('Content-Disposition', header);
+              res.setHeader('content-type', "text/plain;charset=utf8");
+            }
+    console.log("ehllo");
+    next();
+}
 
 /*
  |--------------------------------------------------------------------------
@@ -13,36 +29,24 @@
  |
  */
 module.exports = {
+    "ui": {
+        "port": 3001
+    },
     "files": [
         "*.html",
-//        {
-//            match: ["app.R"],
-//            fn:    function (event, file) {
-//                console.log("got app.R changed");
-//                var exec = require('child_process').exec
-//                var child = exec('Rscript -e "shiny::runApp(launch.browser=FALSE ,port = 4000)"',
-//                  function(err, stdout, stderr) {
-//                    if (err) throw err;
-//                    else console.log(stdout);
-//                });
-//            }
-//        }
     ],
     "watchEvents": [
         "change"
     ],
     "watch": true,
-    "ignore": ["*.md", "*.Rmd"],
+    "ignore": ["*.Rmd","*.md"],
     "single": false,
     "watchOptions": {
         "ignoreInitial": true
     },
-    "server": true,
-    "middleware": function(req, res, next) {
-            req.url === "Simple.html";
-      return next();
-    },
+    "server": false,
     "port": 3000,
+    "middleware": [mymiddleware],
     "serveStatic": ["."],
     "ghostMode": {
         "clicks": true,
@@ -62,7 +66,7 @@ module.exports = {
     "rewriteRules": [],
     "open": false,
     "browser": "",
-    "cors": true,
+    "cors": false,
     "xip": false,
     "hostnameSuffix": false,
     "reloadOnRestart": false,

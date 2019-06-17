@@ -5,4 +5,6 @@
 *.Rproj
 *.html
 *.local
+lsAll
+allFiles
 node_modules/*

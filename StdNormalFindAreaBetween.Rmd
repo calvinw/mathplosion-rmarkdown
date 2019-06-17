@@ -11,7 +11,7 @@ params:
     max: 3.5
     min: -3.5
     step: .1
-    value: 1.0
+    value: 2.0 
   b:
     input: numeric
     label: b
@@ -23,9 +23,10 @@ params:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-a<-params$a
-b<-params$b
-b
+# a<-params$a
+# b<-params$b
+a<- -1.0
+b<- 2.1
 library(ggplot2)
 ```
 

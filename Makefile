@@ -9,23 +9,31 @@ clean :
 	@echo Removing html files...	
 	rm -f $(HTML_FILES) 
 
+allFiles:
+	find -name '*.Rmd' | sort > allFiles 
+
 %.html : %.Rmd
 	@echo Calling render...	
 	Rscript -e 'rmarkdown::render("$<")'
 
-#%.html : %.Rmd
-#	@echo Calling render...	
-#	Rscript -e 'knitr::knit2html("$<", force_v1 = TRUE)'
-
-watchsync: 
-	make -j sync watch
+# %.html : %.Rmd
+# 	@echo Calling render...	
+# 	Rscript -e 'knitr::knit2html("$<", force_v1 = TRUE)'
 
 sync:
-	@echo Starting browser-sync...	
+	@echo Starting sync server...	
 	npx browser-sync start --config=bs-config.js
-		
 
+watchlive: 
+	make -j watch live
+
+live:
+	@echo Starting live reload server...	
+	node app.js	
+		
 watch:
 	@echo Watching .Rmd files...	
 	@echo Will call make on changes...	
 	ls *.Rmd | entr -csp 'make'
+
+.PHONY: all clean live watch watchlive allFiles

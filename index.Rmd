@@ -1,5 +1,5 @@
 
-# These are the problem What can I
+# Here are the problems 
 
 ##Z Table Example
 This one shows how to make a table. 

@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://gitlab.com/calvinw/mathplosion-rmarkdown.git"
@@ -19,7 +17,8 @@
   "homepage": "https://gitlab.com/calvinw/mathplosion-rmarkdown#README",
   "devDependencies": {
     "browser-sync": "^2.24.6",
-    "connect-logger": "0.0.1",
-    "live-server": "^1.2.0"
-  }
+    "live-server": "^1.2.0",
+    "path": "^0.12.7"
+  },
+  "dependencies": {}
 }
