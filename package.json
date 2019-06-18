@@ -16,8 +16,8 @@
   },
   "homepage": "https://gitlab.com/calvinw/mathplosion-rmarkdown#README",
   "devDependencies": {
-    "browser-sync": "^2.24.6",
-    "live-server": "^1.2.0",
+    "browser-sync": "^2.26.7",
+    "live-server": "^1.2.1",
     "path": "^0.12.7"
   },
   "dependencies": {}

@@ -17,10 +17,6 @@ allFiles:
 	@echo Calling render...	
 	Rscript -e 'rmarkdown::render("$<")'
 
-# %.html : %.Rmd
-# 	@echo Calling render...	
-# 	Rscript -e 'knitr::knit2html("$<", force_v1 = TRUE)'
-
 sync:
 	@echo Starting sync server...	
 	npx browser-sync start --config=bs-config.js

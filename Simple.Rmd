@@ -59,9 +59,9 @@ dnorm_limit <- function(x) {
 
 ## This is an area problem dafsadf 
 
-ou can also embed plots, for example here are some:
+ You can also embed plots, for example here are some:
 
-```{r, echo=FALSE, collapse=TRUE}
+```{r, echo=TRUE, collapse=TRUE}
 params$a
 params$b
 ```
@@ -79,11 +79,9 @@ scale_y_continuous(breaks = seq(0, .4, by = 0.2)) +
 annotate("text", x = 1.5, y = -0.01, label = "z=1.53") +
 annotate("text", x = -1.2, y = -0.01, label = "z=-1.2")
 ```
-
-
 * Parameters
-    * a is `r params$a` and the fraction is \\(\frac{`r params$a`}{4}\\)
-    * b is `r params$b` \\(\frac{3}{4}\\)
+    * a is `r params$a` and the fraction is \(\frac{`r params$a`}{4}\)
+    * b is `r params$b` \(\frac{3}{4}\)
 * blah what 
 
 # Parameter a is `r params$a` and b is `r params$b` 
@@ -99,16 +97,11 @@ annotate("text", x = -1.2, y = -0.01, label = "z=-1.2")
 
    Inline code style  backslash paren style \(\frac{`r params$a`}{4}\)
 
-$$
-`r {
-    x<-params$a; 
-    mu<-params$b; 
-    numer<-(x-mu); 
-    sigma<-1.2; 
-    z<-(x-mu)/sigma
-    sprintf("z=\\frac{x-\\mu}{\\sigma}=\\frac{%s-%s}{%s}=\\frac{%s}{%s}=%s",
-                                                x,mu,sigma,numer,sigma,z)
-   }`
-$$
-
-Can you believe it... no I cannot
+```{r equation, echo=FALSE}
+x<-params$a; 
+mu<-params$b; 
+numer<-(x-mu); 
+sigma<-1.2; 
+z<-(x-mu)/sigma
+```
+$$ z=\frac{x-\mu}{\sigma}=\frac{`r x`-`r mu`}{`r sigma`}=\frac{`r numer`}{`r sigma`}=`r z` $$
