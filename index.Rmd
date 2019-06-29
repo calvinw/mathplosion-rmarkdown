@@ -1,8 +1,18 @@
+---
+output: 
+  html_document:
+    includes:
+      in_header: "header.html"
+---
 
-# Here are some problem templates for now
+# These are the problem templates
 
-## Simple
-Just shows some simple techniques
+## Parametrized Problem
+Rendered: [Html](ParametrizedProblem.html)  
+Source: [Rmd](ParametrizedProblem.Rmd) 
+
+## Simple Problem
+Just shows some simple techniques, really simple, nothing fancy
 
 Rendered: [Html](Simple.html)  
 Source: [Rmd](Simple.Rmd) 

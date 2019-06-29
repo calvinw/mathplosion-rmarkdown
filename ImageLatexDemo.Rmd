@@ -2,6 +2,8 @@
 title: "Image Latex Demo"
 output:
   html_document:
+    includes:
+      in_header: "header.html"
     mathjax: null
     pandoc_args: [
       "--webtex=http://chart.googleapis.com/chart?cht=tx&chl="
@@ -39,9 +41,9 @@ z =\frac{a}{b}
   =\frac{`r a`}{`r b`}
 $$
 
-Why is the above rendered on the left side, instead of the middle?
+Why is the above rendered on the left side, instead of the middle asdfasf?
 
-Inline LaTeX as data URL image: $z = b - a =`r b`-`r a` = `r b-a`$ Text after on same line  
+Inline: \(z = b - a =`r b`-`r a` = `r b-a`\) Text after on same line  
 
 Finally below is a dataURL embedded image:  
 
