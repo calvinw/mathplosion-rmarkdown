@@ -1,12 +1,17 @@
 ---
-name: "Confidence Interval for Means"
+output: 
+  pdf_document:
+  html_document:
+    includes:
+      in_header: "header.html"
+title: "Confidence Interval for Means"
 params:
   xbar:
-    value: 12.3 
+    value: 23 
   sigma:
     value: 4
   n:
-    value: 50 
+    value: 53 
   confidence:
     value: 0.95
 ---
