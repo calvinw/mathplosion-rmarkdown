@@ -1,3 +1,8 @@
+---
+output: 
+  html_document:
+    includes:
+      in_header: "header.html"
   a:
     input: slider
     label: This is a
@@ -41,3 +46,4 @@
     label: 'Word of the day:'
     placeholder: Type the word of the day
     value: 'nothing'
+---

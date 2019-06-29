@@ -5,7 +5,6 @@ export PATH := /bin:/usr/bin:/opt/R/3.4.4/lib/R/bin:$(PATH)
 
 all : $(HTML_FILES) $(PDF_FILES)
 	@echo All files are now up to date
-	touch changed.txt
 
 clean : 
 	@echo Removing html files...	
@@ -19,10 +18,13 @@ allFiles:
 %.html : %.Rmd
 	@echo Calling render for html...	
 	Rscript -e 'rmarkdown::render("$<", "html_document")'
+	@echo html render is finished...	
+	echo $@ | nc -q .01 localhost 4000
 
 %.pdf : %.Rmd
 	@echo Calling render for pdf...	
 	Rscript -e 'rmarkdown::render("$<", "pdf_document")'
+	@echo pdf render is finished...	
 
 sync:
 	@echo Starting sync server...	
@@ -32,7 +34,7 @@ watchlive:
 	make -j watch live
 
 live:
-	@echo Starting live reload server...	
+	@echo Starting node server...	
 	node app.js	
 		
 watch:

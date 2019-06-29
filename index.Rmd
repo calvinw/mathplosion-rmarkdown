@@ -1,3 +1,9 @@
+---
+output: 
+  html_document:
+    includes:
+      in_header: "header.html"
+---
 # Rmarkdown problems 
 
 ## Confidence Interval Means
@@ -7,22 +13,22 @@ Rmd (source) : [Rmd](ConfidenceIntervalMeans.Rmd)
 
 ## Simple
 Html (web version): [Html](Simple.html)  
-Pdf (latex version): [Pdf](Simple.pdf) 
-Rmd (source) : [Rmd](Simple.Rmd) 
+Pdf (latex version): [Pdf](Simple.pdf)   
+Rmd (source) : [Rmd](Simple.Rmd)    
 
 ## Test Problem
 Html (web version): [Html](Test.html)  
-Pdf (latex version): [Pdf](Test.pdf) 
+Pdf (latex version): [Pdf](Test.pdf)   
 Rmd (source) : [Rmd](Test.Rmd) 
 
 ## Standard Normal Shaded Area
 Html (web version): [Html](StdNormalShadedArea.html)  
-Pdf (latex version): [Pdf](StdNormalShadedAreaTest.pdf) 
+Pdf (latex version): [Pdf](StdNormalShadedAreaTest.pdf)   
 Rmd (source) : [Rmd](StdNormalShadedArea.Rmd) 
 
 ## Standard Normal Find Area Between
 Html (web version): [Html]( StdNormalFindAreaBetween.html)  
-Pdf (latex version): [Pdf](StdNormalFindAreaBetween.pdf) 
+Pdf (latex version): [Pdf](StdNormalFindAreaBetween.pdf)   
 Rmd (source) : [Rmd](StdNormalShadedAreaTest.Rmd) 
 
 ## Image Latex Demo

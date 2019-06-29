@@ -1,6 +1,13 @@
-# My Test little Problem, this is what I want
+---
+output: 
+  html_document:
+    includes:
+      in_header: "header.html"
+---
 
-Here is a little _markdown_ and here is some display math:   
+# Here is a _Title_  
+
+Then we have some display math...
 
 $$
 z = \frac{x-\mu}{\sigma} = 4
@@ -8,12 +15,10 @@ $$
 
 Now here is some inline math \(\frac{2}{3}\) which should be 2/3.
 
-Help me, Help me!!!
-
 Here is some display math inline r expressions:   
 
 $$
-\frac{x}{4}=\frac{`r 2`}{4} = `r 3/4` 
+\frac{x}{4}=\frac{`r 2+3`}{4} = `r 3/4` 
 $$ 
 
 An inline r expression... `r 2+3`... which should be 6. 

@@ -1,6 +1,8 @@
 ---
 output:
-  html_document: default
+  html_document:
+    includes:
+      in_header: "header.html"
 params:
   a:
     input: slider
@@ -57,14 +59,9 @@ dnorm_limit <- function(x) {
 }
 ```
 
-## This is an area problem dafsadf 
+## Simple with markdown and code 
 
- You can also embed plots, for example here are some:
-
-```{r, echo=TRUE, collapse=TRUE}
-params$a
-params$b
-```
+You can also embed plots, for example here are some:
 
 ```{r area, echo=FALSE}
 #change dev to svg if need to
@@ -79,10 +76,11 @@ scale_y_continuous(breaks = seq(0, .4, by = 0.2)) +
 annotate("text", x = 1.5, y = -0.01, label = "z=1.53") +
 annotate("text", x = -1.2, y = -0.01, label = "z=-1.2")
 ```
-* Parameters
-    * a is `r params$a` and the fraction is \(\frac{`r params$a`}{4}\)
-    * b is `r params$b` \(\frac{3}{4}\)
-* blah what 
+
+My Parameters
+- a is `r params$a` and the fraction is \(\frac{`r params$a`}{4}\)
+- b is `r params$b` $\frac{3}{2343434}$
+blah what 
 
 # Parameter a is `r params$a` and b is `r params$b` 
 1. The region is `r params$region`
@@ -104,4 +102,9 @@ numer<-(x-mu);
 sigma<-1.2; 
 z<-(x-mu)/sigma
 ```
+
+Here ne with inline r code chunks:
+
 $$ z=\frac{x-\mu}{\sigma}=\frac{`r x`-`r mu`}{`r sigma`}=\frac{`r numer`}{`r sigma`}=`r z` $$
+
+And that is all!!!!!!!!
