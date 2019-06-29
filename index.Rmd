@@ -1,17 +1,15 @@
 
-# Here are some problem templates for now
+# Rmarkdown problems 
+
+## Confidence Interval Means
+Rendered: [Html](ConfidenceIntervalMeans.html)  
+Source: [Rmd](ConfidenceIntervalMeans.Rmd) 
 
 ## Simple
-Just shows some simple techniques
+This is just some simple techniques
 
 Rendered: [Html](Simple.html)  
 Source: [Rmd](Simple.Rmd) 
-
-## Z Table Example
-This one shows how to make a table. 
-
-Rendered: [Html](Table.html)  
-Source: [Rmd](Table.Rmd) 
 
 ## Test Problem
 Just shows some simple techniques. yes
@@ -43,3 +41,10 @@ This one calculates the area between two x-values.
 
 Rendered: [Html](NormalCurveAreaBetween.html)  
 Source: [Rmd](NormalCurveAreaBetween.Rmd) 
+
+## Z Table Example
+This one shows how to make a table. 
+
+Rendered: [Html](Table.html)  
+Source: [Rmd](Table.Rmd) 
+

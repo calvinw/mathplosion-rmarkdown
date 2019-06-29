@@ -7,7 +7,6 @@ var params = {
     root: ".", 
     open: false, 
     watch: ["changed.txt"],
-//  ignore: ["Makefile", "*.Rmd", "*.md"],
     file: "index.html", 
     logLevel: 2, // 0 = errors only, 1 = some, 2 = lots
     middleware: [
