@@ -1,5 +1,5 @@
 ---
-name: "Confidence Interval for Means"
+title: "Confidence Interval for Means"
 params:
   xbar:
     value: 12.3 
@@ -28,29 +28,20 @@ Find a `r confidence*100`% confidence interval when the sample mean is $\bar x=`
 
 First we find the E involved, using the confidence level to compute the appropriate critical z-value:
 
-\begin{align}
-E & = (z^\star)\frac{\sigma}{\sqrt{n}} \newline
-  & = (`r round(zstar,3)`)(\frac{`r sigma`}{\sqrt{`r n`}}) \newline 
-  & = (`r round(zstar,3)`)(\frac{`r sigma`}{`r round(sqrtOfN,3)`}) \newline
-  & = (`r round(zstar,3)`)(`r round(sigma/sqrtOfN,3)`) \newline
+\begin{align*}
+E & = (z^\star)\frac{\sigma}{\sqrt{n}} \\
+  & = (`r round(zstar,3)`)(\frac{`r sigma`}{\sqrt{`r n`}}) \\ 
+  & = (`r round(zstar,3)`)(\frac{`r sigma`}{`r round(sqrtOfN,3)`}) \\
+  & = (`r round(zstar,3)`)(`r round(sigma/sqrtOfN,3)`) \\
   & = `r round(E,3)`
-\end{align}
+\end{align*}
 
 Then we find the two endpoints:
 
-\begin{align}
-\text{left endpoint} & = \bar x - E = `r xbar`-`r round(E,3)` = `r round(xbar-E,3)` \newline 
+\begin{align*}
+\text{left endpoint} & = \bar x - E = `r xbar`-`r round(E,3)` = `r round(xbar-E,3)` \\
 \text{right endpoint} & = \bar x + E = `r xbar`+`r round(E,3)` = `r round(xbar+E,3)` 
-\end{align}
+\end{align*}
 
 So the confidence interval is $(`r round(xbarMinusE,1)`,`r round(xbarPlusE,1)`)$
 
-```{r include=FALSE}
-#\begin{align}
-#E = (z^\star)\frac{\sigma}{\sqrt{n}} 
-#  = (`r round(zstar,3)`)(\frac{`r sigma`}{\sqrt{`r n`}})
-#  = (`r round(zstar,3)`)(\frac{`r sigma`}{`r round(sqrtOfN,3)`}) 
-#  = (`r round(zstar,3)`)(`r round(sigma/sqrtOfN,3)`)
-#  = `r round(E,3)`
-#\end{align}
-```

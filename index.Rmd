@@ -1,50 +1,44 @@
-
 # Rmarkdown problems 
 
 ## Confidence Interval Means
-Rendered: [Html](ConfidenceIntervalMeans.html)  
-Source: [Rmd](ConfidenceIntervalMeans.Rmd) 
+Html (web version) : [Html](ConfidenceIntervalMeans.html)  
+Pdf (latex version): [Pdf](ConfidenceIntervalMeans.pdf) 
+Rmd (source) : [Rmd](ConfidenceIntervalMeans.Rmd) 
 
 ## Simple
-This is just some simple techniques
-
-Rendered: [Html](Simple.html)  
-Source: [Rmd](Simple.Rmd) 
+Html (web version): [Html](Simple.html)  
+Pdf (latex version): [Pdf](Simple.pdf) 
+Rmd (source) : [Rmd](Simple.Rmd) 
 
 ## Test Problem
-Just shows some simple techniques. yes
-
-Rendered: [Html](Test.html)  
-Source: [Rmd](Test.Rmd) 
+Html (web version): [Html](Test.html)  
+Pdf (latex version): [Pdf](Test.pdf) 
+Rmd (source) : [Rmd](Test.Rmd) 
 
 ## Standard Normal Shaded Area
-This one shows the area between two z-values.  
-
-Rendered: [Html](StdNormalShadedArea.html)  
-Source: [Rmd](StdNormalShadedArea.Rmd) 
+Html (web version): [Html](StdNormalShadedArea.html)  
+Pdf (latex version): [Pdf](StdNormalShadedAreaTest.pdf) 
+Rmd (source) : [Rmd](StdNormalShadedArea.Rmd) 
 
 ## Standard Normal Find Area Between
-This one calculates the area between two z-values.  
-
-Rendered: [Html](StdNormalFindAreaBetween.html)  
-Source: [Rmd](StdNormalFindAreaBetween.Rmd) 
+Html (web version): [Html]( StdNormalFindAreaBetween.html)  
+Pdf (latex version): [Pdf](StdNormalFindAreaBetween.pdf) 
+Rmd (source) : [Rmd](StdNormalShadedAreaTest.Rmd) 
 
 ## Image Latex Demo
 This one uses Google Chart API to create images for LaTeX.  
 This is useful for copy and paste in gmail.  
 
-Rendered: [Html](ImageLatexDemo.html)  
-Source: [Rmd](ImageLatexDemo.Rmd) 
+Html (web version): [Html](ImageLatexDemo.html)  
+Pdf (latex version): [Pdf](ImageLatexDemo.pdf) 
+Rmd (source) : [Rmd](ImageLatexDemo.Rmd) 
 
 ## Normal Curve Find Area Between x-values
-This one calculates the area between two x-values.  
-
-Rendered: [Html](NormalCurveAreaBetween.html)  
-Source: [Rmd](NormalCurveAreaBetween.Rmd) 
+Html (web version): [Html](NormalCurveAreaBetween.html)  
+Pdf (latex version): [Pdf](NormalCurveAreaBetween.pdf) 
+Rmd (source) : [Rmd](NormalCurveAreaBetween.Rmd) 
 
 ## Z Table Example
-This one shows how to make a table. 
-
-Rendered: [Html](Table.html)  
-Source: [Rmd](Table.Rmd) 
-
+Html (web version): [Html](Table.html)  
+Pdf (latex version): [Pdf](Table.pdf) 
+Rmd (source) : [Rmd](Table.Rmd) 

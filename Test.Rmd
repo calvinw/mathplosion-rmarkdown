@@ -18,7 +18,7 @@ $$
 
 An inline r expression... `r 2+3`... which should be 6. 
 
-Here is inline math with inline r expression... \\(\frac{`r 3`}{2}\\)... it should be input$x/2: 
+Here is inline math with inline r expression... $\frac{`r 3`}{2}$... it should be 3/2: 
 
 ```{r uniform, echo=FALSE, collapse=TRUE}
 hist(runif(10)) 
