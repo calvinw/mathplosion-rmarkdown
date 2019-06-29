@@ -11,21 +11,15 @@ output:
 Rendered: [Html](ParametrizedProblem.html)  
 Source: [Rmd](ParametrizedProblem.Rmd) 
 
-## Simple Problem
-Just shows some simple techniques, really simple, nothing fancy
+## Confidence Interval Means
+Rendered: [Html](ConfidenceIntervalMeans.html)  
+Source: [Rmd](ConfidenceIntervalMeans.Rmd) 
 
+## Simple
 Rendered: [Html](Simple.html)  
 Source: [Rmd](Simple.Rmd) 
 
-## Z Table Example
-This one shows how to make a table. 
-
-Rendered: [Html](Table.html)  
-Source: [Rmd](Table.Rmd) 
-
 ## Test Problem
-Just shows some simple techniques. yes
-
 Rendered: [Html](Test.html)  
 Source: [Rmd](Test.Rmd) 
 
@@ -53,3 +47,10 @@ This one calculates the area between two x-values.
 
 Rendered: [Html](NormalCurveAreaBetween.html)  
 Source: [Rmd](NormalCurveAreaBetween.Rmd) 
+
+## Z Table Example
+This one shows how to make a table. 
+
+Rendered: [Html](Table.html)  
+Source: [Rmd](Table.Rmd) 
+
