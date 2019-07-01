@@ -6,6 +6,8 @@ export PATH := /bin:/usr/bin:/opt/R/3.4.4/lib/R/bin:$(PATH)
 
 all : $(HTML_FILES) $(PDF_FILES)
 	@echo All files are now up to date
+	@echo Making Json problems data 
+#	node problems.js > json-data.js
 
 clean : 
 	@echo Removing html files...	
@@ -20,7 +22,7 @@ allFiles:
 	@echo Calling render for html...	
 	Rscript -e 'rmarkdown::render("$<", "html_document")'
 	@echo html render is finished...	
-#	echo $@ | nc -q .01 localhost 4000
+# 	echo $@ | nc -q .01 localhost 4000
 
 %.pdf : %.Rmd
 	@echo Calling render for pdf...	

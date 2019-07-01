@@ -20,6 +20,8 @@
 	  border: none;
 	}
   </style> 
+  <script src="node_modules/socket.io-client/dist/socket.io.js"></script>
+  <script src="json-data.js"></script>
 </head>
 <body>
   <div id="app">
@@ -30,7 +32,7 @@
 	  <v-icon v-if="!item.file">
 	    mdi-file
 	  </v-icon>
-	  <v-icon v-else>
+	  <v-icon v-else @click="load(item.page)">
 	    {{ files[item.file] }}
 	  </v-icon>
       </template>
@@ -64,114 +66,49 @@
   <script>
     new Vue({
       el: '#app',
+	  created: function () {
+	      console.log("preparing socket io");
+	      var self = this;
+	      var socket = io();
+	      socket.on("load-event", function (filename) {
+		console.log("got the load event");
+		console.log(filename);
+
+		//var iframe = document.getElementById("theIframe");
+		//iframe.src = "http://localhost:3000/" + filename;
+		self.page = "http://localhost:3000/" + filename;
+	        //self.makeActiveAndOpen(filename)
+
+		//window.location.href = "http://localhost:3000/" + data;
+	      });
+	  },
 	methods: { 
 	    load: function(page) {
 		console.log("help");
 		this.page = page;
 	    }
 	},
+	// computed: {
+	//     open: function() {
+	// 	console.log("open for " + this.page);
+	// 	return [3];
+	//     },
+	//     active: function() {
+	// 	console.log("active for " + this.page);
+	// 	return [301];
+	//     }
+	// },
      data: () => ({
 	  drawer: null,
 	  page: "ConfidenceIntervalMeans.html",
-	  open: [1],
-	  active: [101],
+	  open: [3],
+	  active: [301],
 	  files: {
 	    html: 'mdi-code-tags',
 	    md: 'mdi-markdown',
 	    pdf: 'mdi-file-pdf'
 	  },
-	  items: [
-	    {
-	      id: 1,
-	      name: 'ConfidenceIntervalMeans',
-	      children: [
-		{ id: 101, page: 'ConfidenceIntervalMeans.html', name: 'html', file: 'html' },
-		{ id: 102, page: 'ConfidenceIntervalMeans.Rmd', name: 'Rmd', file: 'md' },
-		{ id: 103, page: 'ConfidenceIntervalMeans.pdf', name: 'pdf', file: 'pdf' }
-	      ]
-	    },
-	    {
-	      id: 2,
-	      name: 'Simple',
-	      children: [
-		{ id: 201, page: 'Simple.html', name: 'html', file: 'html' },
-		{ id: 202, page: 'Simple.Rmd', name: 'Rmd', file: 'md' },
-		{ id: 203, page: 'Simple.pdf', name: 'pdf', file: 'pdf' }
-	      ]
-	    },
-	    {
-	      id: 3,
-	      name: 'CalculateZValue',
-	      children: [
-		{ id: 301, page: 'CalculateZValue.html', name: 'html', file: 'html' },
-		{ id: 302, page: 'CalculateZValue.Rmd', name: 'Rmd', file: 'md' },
-		{ id: 303, page: 'CalculateZValue.pdf', name: 'pdf', file: 'pdf' }
-	      ]
-	    },
-	    {
-	      id: 4,
-	      name: 'ImageLatexDemo',
-	      children: [
-		{ id: 401, page: 'ImageLatexDemo.html', name: 'html', file: 'html' },
-		{ id: 402, page: 'ImageLatexDemo.Rmd', name: 'Rmd', file: 'md' },
-		{ id: 403, page: 'ImageLatexDemo.pdf', name: 'pdf', file: 'pdf' }
-	      ]
-	    },
-	    {
-	      id: 5,
-	      name: 'NormalCurveAreaBetween',
-	      children: [
-		{ id: 501, page: 'NormalCurveAreaBetween.html', name: 'html', file: 'html' },
-		{ id: 502, page: 'NormalCurveAreaBetween.Rmd', name: 'Rmd', file: 'md' },
-		{ id: 503, page: 'NormalCurveAreaBetween.pdf', name: 'pdf', file: 'pdf' }
-	      ]
-	    },
-	    {
-	      id: 6,
-	      name: 'StdNormalFindAreaBetween',
-	      children: [
-		{ id: 601, page: 'StdNormalFindAreaBetween.html', name: 'html', file: 'html' },
-		{ id: 602, page: 'StdNormalFindAreaBetween.Rmd', name: 'Rmd', file: 'md' },
-		{ id: 603, page: 'StdNormalFindAreaBetween.pdf', name: 'pdf', file: 'pdf' }
-	      ]
-	    },
-	    {
-	      id: 7,
-	      name: 'StdNormalShadedArea',
-	      children: [
-		{ id: 701, page: 'StdNormalShadedArea.html', name: 'html', file: 'html' },
-		{ id: 702, page: 'StdNormalShadedArea.Rmd', name: 'Rmd', file: 'md' },
-		{ id: 703, page: 'StdNormalShadedArea.pdf', name: 'pdf', file: 'pdf' }
-	      ]
-	    },
-	    {
-	      id: 8,
-	      name: 'Table',
-	      children: [
-		{ id: 801, page: 'Table.html', name: 'html', file: 'html' },
-		{ id: 802, page: 'Table.Rmd', name: 'Rmd', file: 'md' },
-		{ id: 803, page: 'Table.pdf', name: 'pdf', file: 'pdf' }
-	      ]
-	    },
-	    {
-	      id: 9,
-	      name: 'Test',
-	      children: [
-		{ id: 901, page: 'Test.html', name: 'html', file: 'html' },
-		{ id: 902, page: 'Test.Rmd', name: 'Rmd', file: 'md' },
-		{ id: 903, page: 'Test.pdf', name: 'pdf', file: 'pdf' }
-	      ]
-	    },
-	    {
-	      id: 10,
-	      name: 'AllInputs',
-	      children: [
-		{ id: 1001, page: 'AllInputs.html', name: 'html', file: 'html' },
-		{ id: 1002, page: 'AllInputs.Rmd', name: 'Rmd', file: 'md' },
-		{ id: 1003, page: 'AllInputs.pdf', name: 'pdf', file: 'pdf' }
-	      ]
-	    },
-	  ]
+	 items: jsonItems 
 	})
     })
   </script>
