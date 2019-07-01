@@ -2,46 +2,22 @@ var jsonItems =
 [
   {
     "id": 1,
-    "name": "AllInputs",
-    "children": [
-      {
-        "id": 101,
-        "page": "AllInputs.html",
-        "name": "html",
-        "file": "html"
-      },
-      {
-        "id": 102,
-        "page": "AllInputs.Rmd",
-        "name": "Rmd",
-        "file": "md"
-      },
-      {
-        "id": 103,
-        "page": "AllInputs.pdf",
-        "name": "pdf",
-        "file": "pdf"
-      }
-    ]
-  },
-  {
-    "id": 2,
     "name": "CalculateZValue",
     "children": [
       {
-        "id": 201,
+        "id": 101,
         "page": "CalculateZValue.html",
         "name": "html",
         "file": "html"
       },
       {
-        "id": 202,
+        "id": 102,
         "page": "CalculateZValue.Rmd",
         "name": "Rmd",
         "file": "md"
       },
       {
-        "id": 203,
+        "id": 103,
         "page": "CalculateZValue.pdf",
         "name": "pdf",
         "file": "pdf"
@@ -49,23 +25,23 @@ var jsonItems =
     ]
   },
   {
-    "id": 3,
+    "id": 2,
     "name": "ConfidenceIntervalMeans",
     "children": [
       {
-        "id": 301,
+        "id": 201,
         "page": "ConfidenceIntervalMeans.html",
         "name": "html",
         "file": "html"
       },
       {
-        "id": 302,
+        "id": 202,
         "page": "ConfidenceIntervalMeans.Rmd",
         "name": "Rmd",
         "file": "md"
       },
       {
-        "id": 303,
+        "id": 203,
         "page": "ConfidenceIntervalMeans.pdf",
         "name": "pdf",
         "file": "pdf"
@@ -73,24 +49,48 @@ var jsonItems =
     ]
   },
   {
-    "id": 4,
+    "id": 3,
     "name": "ImageLatexDemo",
     "children": [
       {
-        "id": 401,
+        "id": 301,
         "page": "ImageLatexDemo.html",
         "name": "html",
         "file": "html"
       },
       {
-        "id": 402,
+        "id": 302,
         "page": "ImageLatexDemo.Rmd",
         "name": "Rmd",
         "file": "md"
       },
       {
-        "id": 403,
+        "id": 303,
         "page": "ImageLatexDemo.pdf",
+        "name": "pdf",
+        "file": "pdf"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Inputs",
+    "children": [
+      {
+        "id": 401,
+        "page": "Inputs.html",
+        "name": "html",
+        "file": "html"
+      },
+      {
+        "id": 402,
+        "page": "Inputs.Rmd",
+        "name": "Rmd",
+        "file": "md"
+      },
+      {
+        "id": 403,
+        "page": "Inputs.pdf",
         "name": "pdf",
         "file": "pdf"
       }
