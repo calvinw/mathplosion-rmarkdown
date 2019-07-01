@@ -5,8 +5,10 @@ pages:
   script:
   - apt-get update 
   - apt-get -y install pandoc
+  - wget -qO- "https://yihui.name/gh/tinytex/tools/install-unx.sh" | sh
   - Rscript -e "install.packages('rmarkdown')"
   - Rscript -e "install.packages('ggplot2')"
+  
   - make
   - mkdir .public
   - cp -r * .public
