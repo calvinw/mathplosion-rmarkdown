@@ -4,8 +4,10 @@
 .Ruserdata
 *.Rproj
 *.html
-*.pdf
 !header.html
+!index.html
+!page.html
+*.pdf
 *.local
 lsAll
 allFiles
