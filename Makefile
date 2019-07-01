@@ -1,9 +1,10 @@
 SOURCES=$(shell find . -name "*.Rmd")
 HTML_FILES = $(SOURCES:%.Rmd=%.html)
 PDF_FILES = $(SOURCES:%.Rmd=%.pdf)
+DOCX_FILES = $(SOURCES:%.Rmd=%.docx)
 export PATH := /bin:/usr/bin:/opt/R/3.4.4/lib/R/bin:$(PATH) 
 
-all : $(HTML_FILES) $(PDF_FILES)
+all : $(HTML_FILES) $(PDF_FILES) $(DOCX_FILES)
 	@echo All files are now up to date
 
 clean : 
@@ -25,7 +26,11 @@ allFiles:
 	@echo Calling render for pdf...	
 	Rscript -e 'rmarkdown::render("$<", "pdf_document")'
 	@echo pdf render is finished...	
-	echo $@ | nc -q .01 localhost 4000
+
+%.docx : %.Rmd
+	@echo Calling render for pdf...	
+	Rscript -e 'rmarkdown::render("$<", "word_document")'
+	@echo pdf render is finished...	
 
 sync:
 	@echo Starting sync server...	

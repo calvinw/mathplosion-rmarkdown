@@ -1,9 +1,5 @@
 ---
 Title: "Shaded Area Under Standard Normal Curve"
-output:
-  html_document:
-    includes:
-      in_header: "header.html"
 params: 
   a: -0.64 
   b: 2.03

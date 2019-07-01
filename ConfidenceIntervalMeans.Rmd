@@ -1,18 +1,14 @@
 ---
-title: "Confidence Interval for Means"
-output: 
-  html_document:
-    includes:
-      in_header: "header.html"
+title: "Confidence Interval for Means - $\\sigma$ Known" 
 params:
   xbar:
-    value: 21 
+    value: 21
   sigma:
     value: 10 
   n:
-    value: 500 
+    value: 23 
   confidence:
-    value: 0.90
+    value: 0.98
 ---
 ```{r params, include=FALSE}
 #params
@@ -28,9 +24,21 @@ xbarMinusE <- xbar - E
 xbarPlusE <- xbar + E
 ```
 
-Find a `r confidence*100`% confidence interval when the sample mean is $\bar x=`r xbar`$, the standard deviation is $\sigma=`r sigma`$ and the sample size is $n = `r n`$.
+Find a **`r confidence*100`%** confidence interval when the sample mean is $\bar x=`r xbar`$, the sample size is $n = `r n`$, and the standard deviation for the population is known to be $\sigma=`r sigma`$.
 
-First we find the E involved, using the confidence level to compute the appropriate critical z-value:
+We can use the formula for finding the error $E$ since we know the standard deviation:   
+
+$$
+E = (z^\star)\frac{\sigma}{\sqrt{n}}
+$$
+
+First using the confidence level ( **`r confidence*100`%** ) we lookup (or compute) the appropriate critical $z^\star$ for the situation:
+
+$$
+z^\star=`r zstar`
+$$
+
+Plugging that in together with the other values we get:
 
 \begin{align*}
 E & = (z^\star)\frac{\sigma}{\sqrt{n}} \\
@@ -43,9 +51,12 @@ E & = (z^\star)\frac{\sigma}{\sqrt{n}} \\
 Then we find the two endpoints:
 
 \begin{align*}
-\text{left endpoint} & = \bar x - E = `r xbar`-`r round(E,3)` = `r round(xbar-E,3)` \\
-\text{right endpoint} & = \bar x + E = `r xbar`+`r round(E,3)` = `r round(xbar+E,3)` 
+\bar x - E = `r xbar`-`r round(E,3)` = `r round(xbar-E,3)` \\  
+\bar x + E = `r xbar`+`r round(E,3)` = `r round(xbar+E,3)`   
 \end{align*}
 
-So the confidence interval is $(`r round(xbarMinusE,1)`,`r round(xbarPlusE,1)`)$
+So the confidence interval is 
+$$
+(`r round(xbarMinusE,2)`,`r round(xbarPlusE,2)`)
+$$
 

@@ -1,8 +1,4 @@
 ---
-output: 
-  html_document:
-    includes:
-      in_header: "header.html"
   a:
     input: slider
     label: This is a

@@ -1,11 +1,5 @@
 ---
 title: "Standard Normal Curve Area Between"
-categories: ["R"]
-tags: ["z-distribution"] 
-output:
-  html_document:
-    includes:
-      in_header: "header.html"
 params:
   a:
     input: numeric

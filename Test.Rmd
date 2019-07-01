@@ -1,10 +1,3 @@
----
-output: 
-  html_document:
-    includes:
-      in_header: "header.html"
----
-
 # Here is a _Title_  
 
 Then we have some display math...

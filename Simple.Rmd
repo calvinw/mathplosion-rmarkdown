@@ -1,8 +1,4 @@
 ---
-output:
-  html_document:
-    includes:
-      in_header: "header.html"
 params:
   a:
     input: slider
@@ -59,7 +55,7 @@ dnorm_limit <- function(x) {
 }
 ```
 
-## Simple with markdown and code 
+# Simple with markdown and code 
 
 You can also embed plots, for example here are some:
 

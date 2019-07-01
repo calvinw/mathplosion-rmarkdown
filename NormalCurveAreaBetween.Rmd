@@ -1,8 +1,4 @@
 ---
-output:
-  html_document:
-    includes:
-      in_header: "header.html"
 params:
   a:
     input: numeric
