@@ -32,7 +32,7 @@
 	  <v-icon v-if="!item.file">
 	    mdi-file
 	  </v-icon>
-	  <v-icon v-else @click="load(item.page)">
+	  <v-icon v-else @click="display(item.id)">
 	    {{ files[item.file] }}
 	  </v-icon>
       </template>
@@ -40,7 +40,7 @@
 	    <div v-if="!item.file">
 		{{item.name}}
 	    </div>
-	    <div v-else @click="load(item.page)">
+	    <div v-else @click="display(item.id)">
 		{{item.name}}
 	    </div>
       </template>
@@ -70,22 +70,38 @@
 	      console.log("preparing socket io");
 	      var self = this;
 	      var socket = io();
-	      socket.on("load-event", function (filename) {
+	      socket.on("load-event", function (page) {
 		console.log("got the load event");
-		console.log(filename);
+	        console.log(page);
 
 		//var iframe = document.getElementById("theIframe");
 		//iframe.src = "http://localhost:3000/" + filename;
-		self.page = "http://localhost:3000/" + filename;
-	        //self.makeActiveAndOpen(filename)
-
 		//window.location.href = "http://localhost:3000/" + data;
+
+		//self.page = "http://localhost:3000/" + filename;
+		self.load(page);
 	      });
 	  },
 	methods: { 
+	    display: function(page) {
+	       //ui is already set correctly for this. 
+	       this.page = page;
+	    },
 	    load: function(page) {
-		console.log("help");
-		this.page = page;
+		    if(this.page === page) {
+			console.log("load: update forced");
+			var iframe = document.getElementById("theIframe");
+			iframe.src = "http://localhost:3000/" + page;
+		    }
+		    else {
+		      console.log("load: no forced update");
+		      console.log("need to adjust ui open and active");
+		      console.log(page);
+		      this.page = page;
+		      var base = this.page.substring(0, this.page.lastIndexOf('.'));
+		      this.open = [base];
+		      this.active = [this.page];
+		    }
 	    }
 	},
 	// computed: {
@@ -101,8 +117,8 @@
      data: () => ({
 	  drawer: null,
 	  page: "ConfidenceIntervalMeans.html",
-	  open: [2],
-	  active: [201],
+	  open: ["ConfidenceIntervalMeans"],
+	  active: ["ConfidenceIntervalMeans.html"],
 	  files: {
 	    html: 'mdi-code-tags',
 	    md: 'mdi-markdown',

@@ -4,10 +4,8 @@ PDF_FILES = $(SOURCES:%.Rmd=%.pdf)
 #DOCX_FILES = $(SOURCES:%.Rmd=%.docx)
 export PATH := /bin:/usr/bin:/opt/R/3.4.4/lib/R/bin:$(PATH) 
 
-all : $(HTML_FILES) $(PDF_FILES)
+all : $(HTML_FILES)
 	@echo All files are now up to date
-	@echo Making Json problems data 
-#	node problems.js > json-data.js
 
 clean : 
 	@echo Removing html files...	
@@ -22,32 +20,11 @@ allFiles:
 	@echo Calling render for html...	
 	Rscript -e 'rmarkdown::render("$<", "html_document")'
 	@echo html render is finished...	
-# 	echo $@ | nc -q .01 localhost 4000
+	-echo $@ | nc -q .01 localhost 4000
 
 %.pdf : %.Rmd
 	@echo Calling render for pdf...	
 	Rscript -e 'rmarkdown::render("$<", "pdf_document")'
 	@echo pdf render is finished...	
 
-# %.docx : %.Rmd
-# 	@echo Calling render for pdf...	
-# 	Rscript -e 'rmarkdown::render("$<", "word_document")'
-# 	@echo pdf render is finished...	
-#
-sync:
-	@echo Starting sync server...	
-	npx browser-sync start --config=bs-config.js
-
-watchlive: 
-	make -j watch live
-
-live:
-	@echo Starting node server...	
-	node app.js	
-		
-watch:
-	@echo Watching .Rmd files...	
-	@echo Will call make on changes...	
-	while true; do ls *.Rmd | entr make; done
-
-.PHONY: all allpdf clean live watch watchlive allFiles
+.PHONY: all allpdf clean allFiles

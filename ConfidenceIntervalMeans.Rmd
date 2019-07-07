@@ -2,7 +2,7 @@
 title: "Confidence Interval for Means - $\\sigma$ Known" 
 params:
   xbar:
-    value: 21
+    value: 44
   sigma:
     value: 10 
   n:

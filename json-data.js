@@ -1,242 +1,182 @@
 var jsonItems =
 [
   {
-    "id": 1,
+    "id": "CalculateZValue",
     "name": "CalculateZValue",
     "children": [
       {
-        "id": 101,
+        "id": "CalculateZValue.html",
         "page": "CalculateZValue.html",
         "name": "html",
         "file": "html"
       },
       {
-        "id": 102,
+        "id": "CalculateZValue.Rmd",
         "page": "CalculateZValue.Rmd",
         "name": "Rmd",
         "file": "md"
-      },
-      {
-        "id": 103,
-        "page": "CalculateZValue.pdf",
-        "name": "pdf",
-        "file": "pdf"
       }
     ]
   },
   {
-    "id": 2,
+    "id": "ConfidenceIntervalMeans",
     "name": "ConfidenceIntervalMeans",
     "children": [
       {
-        "id": 201,
+        "id": "ConfidenceIntervalMeans.html",
         "page": "ConfidenceIntervalMeans.html",
         "name": "html",
         "file": "html"
       },
       {
-        "id": 202,
+        "id": "ConfidenceIntervalMeans.Rmd",
         "page": "ConfidenceIntervalMeans.Rmd",
         "name": "Rmd",
         "file": "md"
-      },
-      {
-        "id": 203,
-        "page": "ConfidenceIntervalMeans.pdf",
-        "name": "pdf",
-        "file": "pdf"
       }
     ]
   },
   {
-    "id": 3,
+    "id": "ImageLatexDemo",
     "name": "ImageLatexDemo",
     "children": [
       {
-        "id": 301,
+        "id": "ImageLatexDemo.html",
         "page": "ImageLatexDemo.html",
         "name": "html",
         "file": "html"
       },
       {
-        "id": 302,
+        "id": "ImageLatexDemo.Rmd",
         "page": "ImageLatexDemo.Rmd",
         "name": "Rmd",
         "file": "md"
-      },
-      {
-        "id": 303,
-        "page": "ImageLatexDemo.pdf",
-        "name": "pdf",
-        "file": "pdf"
       }
     ]
   },
   {
-    "id": 4,
+    "id": "Inputs",
     "name": "Inputs",
     "children": [
       {
-        "id": 401,
+        "id": "Inputs.html",
         "page": "Inputs.html",
         "name": "html",
         "file": "html"
       },
       {
-        "id": 402,
+        "id": "Inputs.Rmd",
         "page": "Inputs.Rmd",
         "name": "Rmd",
         "file": "md"
-      },
-      {
-        "id": 403,
-        "page": "Inputs.pdf",
-        "name": "pdf",
-        "file": "pdf"
       }
     ]
   },
   {
-    "id": 5,
+    "id": "NormalCurveAreaBetween",
     "name": "NormalCurveAreaBetween",
     "children": [
       {
-        "id": 501,
+        "id": "NormalCurveAreaBetween.html",
         "page": "NormalCurveAreaBetween.html",
         "name": "html",
         "file": "html"
       },
       {
-        "id": 502,
+        "id": "NormalCurveAreaBetween.Rmd",
         "page": "NormalCurveAreaBetween.Rmd",
         "name": "Rmd",
         "file": "md"
-      },
-      {
-        "id": 503,
-        "page": "NormalCurveAreaBetween.pdf",
-        "name": "pdf",
-        "file": "pdf"
       }
     ]
   },
   {
-    "id": 6,
+    "id": "Simple",
     "name": "Simple",
     "children": [
       {
-        "id": 601,
+        "id": "Simple.html",
         "page": "Simple.html",
         "name": "html",
         "file": "html"
       },
       {
-        "id": 602,
+        "id": "Simple.Rmd",
         "page": "Simple.Rmd",
         "name": "Rmd",
         "file": "md"
-      },
-      {
-        "id": 603,
-        "page": "Simple.pdf",
-        "name": "pdf",
-        "file": "pdf"
       }
     ]
   },
   {
-    "id": 7,
+    "id": "StdNormalFindAreaBetween",
     "name": "StdNormalFindAreaBetween",
     "children": [
       {
-        "id": 701,
+        "id": "StdNormalFindAreaBetween.html",
         "page": "StdNormalFindAreaBetween.html",
         "name": "html",
         "file": "html"
       },
       {
-        "id": 702,
+        "id": "StdNormalFindAreaBetween.Rmd",
         "page": "StdNormalFindAreaBetween.Rmd",
         "name": "Rmd",
         "file": "md"
-      },
-      {
-        "id": 703,
-        "page": "StdNormalFindAreaBetween.pdf",
-        "name": "pdf",
-        "file": "pdf"
       }
     ]
   },
   {
-    "id": 8,
+    "id": "StdNormalShadedArea",
     "name": "StdNormalShadedArea",
     "children": [
       {
-        "id": 801,
+        "id": "StdNormalShadedArea.html",
         "page": "StdNormalShadedArea.html",
         "name": "html",
         "file": "html"
       },
       {
-        "id": 802,
+        "id": "StdNormalShadedArea.Rmd",
         "page": "StdNormalShadedArea.Rmd",
         "name": "Rmd",
         "file": "md"
-      },
-      {
-        "id": 803,
-        "page": "StdNormalShadedArea.pdf",
-        "name": "pdf",
-        "file": "pdf"
       }
     ]
   },
   {
-    "id": 9,
+    "id": "Table",
     "name": "Table",
     "children": [
       {
-        "id": 901,
+        "id": "Table.html",
         "page": "Table.html",
         "name": "html",
         "file": "html"
       },
       {
-        "id": 902,
+        "id": "Table.Rmd",
         "page": "Table.Rmd",
         "name": "Rmd",
         "file": "md"
-      },
-      {
-        "id": 903,
-        "page": "Table.pdf",
-        "name": "pdf",
-        "file": "pdf"
       }
     ]
   },
   {
-    "id": 10,
+    "id": "Test",
     "name": "Test",
     "children": [
       {
-        "id": 1001,
+        "id": "Test.html",
         "page": "Test.html",
         "name": "html",
         "file": "html"
       },
       {
-        "id": 1002,
+        "id": "Test.Rmd",
         "page": "Test.Rmd",
         "name": "Rmd",
         "file": "md"
-      },
-      {
-        "id": 1003,
-        "page": "Test.pdf",
-        "name": "pdf",
-        "file": "pdf"
       }
     ]
   }

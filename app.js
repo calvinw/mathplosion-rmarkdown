@@ -28,17 +28,19 @@ app.use(function(req, res, next) {
 app.use(express.static(__dirname));
 
 //webserver for site index.html
+console.log("webserver running on 3000");
 http.listen(3000);
 
 //tcpserver for listening to file changed from wherever 
 const tcpServer = net.createServer(function(socket) {
     socket.on("data", function(data) {
-	console.log("data : " + data);
-	const fileName = data.toString("utf8");
-	console.log("sending fileName: " + fileName);
+	console.log("got tcp message on 4000");
+	const fileName = data.toString("utf8").trim();
+	console.log("sending load-event to browser: " + fileName);
 	io.emit('load-event', fileName);
     })
 });
 
 //Tcp connections listens on 4000
+console.log("listening for tcp connections on 4000");
 tcpServer.listen(4000, "127.0.0.1");

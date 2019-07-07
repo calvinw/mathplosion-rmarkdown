@@ -12,13 +12,17 @@ fs.readdir(dirPath, function(err, files){
     for(f of filesList){
       var parsed = path.parse(f);
       var name = parsed.name;
+
+      var htmlFile = name + '.html'
+      var rmdFile = name + '.Rmd'
+      var pdfFile = name + '.pdf'
 	var item = {
-	  id: id,
+	  id: name,
 	  name: name,
 	  children: [
-	    { id: id*100+1, page: name + '.html', name: 'html', file: 'html' },
-	    { id: id*100+2, page: name + '.Rmd', name: 'Rmd', file: 'md' },
-	    { id: id*100+3, page: name + '.pdf', name: 'pdf', file: 'pdf'}
+	    { id: htmlFile , page: htmlFile, name: 'html', file: 'html' },
+	    { id: rmdFile, page: rmdFile, name: 'Rmd', file: 'md' },
+//	    { id: pdfFile, page: pdfFile, name: 'pdf', file: 'pdf'}
 	  ]
 	};
 	arr.push(item);
