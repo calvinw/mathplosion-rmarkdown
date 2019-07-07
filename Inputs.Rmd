@@ -43,3 +43,4 @@
     placeholder: Type the word of the day
     value: 'nothing'
 ---
+Hello there now we should be better
