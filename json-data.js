@@ -15,6 +15,12 @@ var jsonItems =
         "page": "CalculateZValue.Rmd",
         "name": "Rmd",
         "file": "md"
+      },
+      {
+        "id": "CalculateZValue.pdf",
+        "page": "CalculateZValue.pdf",
+        "name": "pdf",
+        "file": "pdf"
       }
     ]
   },
@@ -33,6 +39,12 @@ var jsonItems =
         "page": "ConfidenceIntervalMeans.Rmd",
         "name": "Rmd",
         "file": "md"
+      },
+      {
+        "id": "ConfidenceIntervalMeans.pdf",
+        "page": "ConfidenceIntervalMeans.pdf",
+        "name": "pdf",
+        "file": "pdf"
       }
     ]
   },
@@ -51,6 +63,12 @@ var jsonItems =
         "page": "ImageLatexDemo.Rmd",
         "name": "Rmd",
         "file": "md"
+      },
+      {
+        "id": "ImageLatexDemo.pdf",
+        "page": "ImageLatexDemo.pdf",
+        "name": "pdf",
+        "file": "pdf"
       }
     ]
   },
@@ -69,6 +87,12 @@ var jsonItems =
         "page": "Inputs.Rmd",
         "name": "Rmd",
         "file": "md"
+      },
+      {
+        "id": "Inputs.pdf",
+        "page": "Inputs.pdf",
+        "name": "pdf",
+        "file": "pdf"
       }
     ]
   },
@@ -87,6 +111,12 @@ var jsonItems =
         "page": "NormalCurveAreaBetween.Rmd",
         "name": "Rmd",
         "file": "md"
+      },
+      {
+        "id": "NormalCurveAreaBetween.pdf",
+        "page": "NormalCurveAreaBetween.pdf",
+        "name": "pdf",
+        "file": "pdf"
       }
     ]
   },
@@ -105,6 +135,12 @@ var jsonItems =
         "page": "Simple.Rmd",
         "name": "Rmd",
         "file": "md"
+      },
+      {
+        "id": "Simple.pdf",
+        "page": "Simple.pdf",
+        "name": "pdf",
+        "file": "pdf"
       }
     ]
   },
@@ -123,6 +159,12 @@ var jsonItems =
         "page": "StdNormalFindAreaBetween.Rmd",
         "name": "Rmd",
         "file": "md"
+      },
+      {
+        "id": "StdNormalFindAreaBetween.pdf",
+        "page": "StdNormalFindAreaBetween.pdf",
+        "name": "pdf",
+        "file": "pdf"
       }
     ]
   },
@@ -141,6 +183,12 @@ var jsonItems =
         "page": "StdNormalShadedArea.Rmd",
         "name": "Rmd",
         "file": "md"
+      },
+      {
+        "id": "StdNormalShadedArea.pdf",
+        "page": "StdNormalShadedArea.pdf",
+        "name": "pdf",
+        "file": "pdf"
       }
     ]
   },
@@ -159,6 +207,12 @@ var jsonItems =
         "page": "Table.Rmd",
         "name": "Rmd",
         "file": "md"
+      },
+      {
+        "id": "Table.pdf",
+        "page": "Table.pdf",
+        "name": "pdf",
+        "file": "pdf"
       }
     ]
   },
@@ -177,6 +231,12 @@ var jsonItems =
         "page": "Test.Rmd",
         "name": "Rmd",
         "file": "md"
+      },
+      {
+        "id": "Test.pdf",
+        "page": "Test.pdf",
+        "name": "pdf",
+        "file": "pdf"
       }
     ]
   }

@@ -1,7 +1,7 @@
 ---
 params:
   mu:
-    value: 40 
+    value: 50 
   sigma:
     value: 13 
   x:
@@ -15,7 +15,7 @@ sigma<-params$sigma;
 z<-(x-mu)/sigma
 ```
 
-Suppose that $\mu=`r mu`$, $\sigma=`r sigma`$ and $x = `r x`$. Then we can find the value of z as follows:
+Suppose that:$\mu=`r mu`$, $\sigma=`r sigma`$ and $x = `r x`$. Then we can find the value of z as follows:
 
 $$
 z=\frac{x-\mu}{\sigma}

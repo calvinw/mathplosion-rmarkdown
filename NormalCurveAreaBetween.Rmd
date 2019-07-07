@@ -92,6 +92,6 @@ Here is a picture of the area that we want.
 * Parameters
     * a is `r params$a` and the fraction is \(\frac{`r params$a`}{4}\)
     * b is $\frac{3}{4}$
-* blah albh
+* another bullet point 
 
 # Parameter a is `r params$a` and b is `r params$b` 
