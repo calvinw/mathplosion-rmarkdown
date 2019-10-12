@@ -1,0 +1,348 @@
+[
+  {
+    "id": 1,
+    "name": "Files",
+    "children": [
+      {
+        "id": 10,
+        "name": "CalculateZValue",
+        "children": [
+          {
+            "id": 11,
+            "name": "CalculateZValue.Rmd",
+            "file": "Rmd"
+          },
+          {
+            "id": 12,
+            "name": "CalculateZValue.html",
+            "file": "html"
+          },
+          {
+            "id": 13,
+            "name": "CalculateZValue.pdf",
+            "file": "pdf"
+          },
+          {
+            "id": 14,
+            "name": "CalculateZValue.ipynb",
+            "file": "ipynb"
+          },
+          {
+            "id": 15,
+            "name": "CalculateZValue.docx",
+            "file": "docx"
+          }
+        ]
+      },
+      {
+        "id": 18,
+        "name": "ConfidenceIntervalMeans",
+        "children": [
+          {
+            "id": 19,
+            "name": "ConfidenceIntervalMeans.Rmd",
+            "file": "Rmd"
+          },
+          {
+            "id": 20,
+            "name": "ConfidenceIntervalMeans.html",
+            "file": "html"
+          },
+          {
+            "id": 21,
+            "name": "ConfidenceIntervalMeans.pdf",
+            "file": "pdf"
+          },
+          {
+            "id": 22,
+            "name": "ConfidenceIntervalMeans.ipynb",
+            "file": "ipynb"
+          },
+          {
+            "id": 23,
+            "name": "ConfidenceIntervalMeans.docx",
+            "file": "docx"
+          }
+        ]
+      },
+      {
+        "id": 26,
+        "name": "NormalCurveAreaBetween",
+        "children": [
+          {
+            "id": 27,
+            "name": "NormalCurveAreaBetween.Rmd",
+            "file": "Rmd"
+          },
+          {
+            "id": 28,
+            "name": "NormalCurveAreaBetween.html",
+            "file": "html"
+          },
+          {
+            "id": 29,
+            "name": "NormalCurveAreaBetween.pdf",
+            "file": "pdf"
+          },
+          {
+            "id": 30,
+            "name": "NormalCurveAreaBetween.ipynb",
+            "file": "ipynb"
+          },
+          {
+            "id": 31,
+            "name": "NormalCurveAreaBetween.docx",
+            "file": "docx"
+          }
+        ]
+      },
+      {
+        "id": 34,
+        "name": "Simple",
+        "children": [
+          {
+            "id": 35,
+            "name": "Simple.Rmd",
+            "file": "Rmd"
+          },
+          {
+            "id": 36,
+            "name": "Simple.html",
+            "file": "html"
+          },
+          {
+            "id": 37,
+            "name": "Simple.pdf",
+            "file": "pdf"
+          },
+          {
+            "id": 38,
+            "name": "Simple.ipynb",
+            "file": "ipynb"
+          },
+          {
+            "id": 39,
+            "name": "Simple.docx",
+            "file": "docx"
+          }
+        ]
+      },
+      {
+        "id": 42,
+        "name": "StdNormalFindAreaBetween",
+        "children": [
+          {
+            "id": 43,
+            "name": "StdNormalFindAreaBetween.Rmd",
+            "file": "Rmd"
+          },
+          {
+            "id": 44,
+            "name": "StdNormalFindAreaBetween.html",
+            "file": "html"
+          },
+          {
+            "id": 45,
+            "name": "StdNormalFindAreaBetween.pdf",
+            "file": "pdf"
+          },
+          {
+            "id": 46,
+            "name": "StdNormalFindAreaBetween.ipynb",
+            "file": "ipynb"
+          },
+          {
+            "id": 47,
+            "name": "StdNormalFindAreaBetween.docx",
+            "file": "docx"
+          }
+        ]
+      },
+      {
+        "id": 50,
+        "name": "StdNormalShadedArea",
+        "children": [
+          {
+            "id": 51,
+            "name": "StdNormalShadedArea.Rmd",
+            "file": "Rmd"
+          },
+          {
+            "id": 52,
+            "name": "StdNormalShadedArea.html",
+            "file": "html"
+          },
+          {
+            "id": 53,
+            "name": "StdNormalShadedArea.pdf",
+            "file": "pdf"
+          },
+          {
+            "id": 54,
+            "name": "StdNormalShadedArea.ipynb",
+            "file": "ipynb"
+          },
+          {
+            "id": 55,
+            "name": "StdNormalShadedArea.docx",
+            "file": "docx"
+          }
+        ]
+      },
+      {
+        "id": 58,
+        "name": "Table",
+        "children": [
+          {
+            "id": 59,
+            "name": "Table.Rmd",
+            "file": "Rmd"
+          },
+          {
+            "id": 60,
+            "name": "Table.html",
+            "file": "html"
+          },
+          {
+            "id": 61,
+            "name": "Table.pdf",
+            "file": "pdf"
+          },
+          {
+            "id": 62,
+            "name": "Table.ipynb",
+            "file": "ipynb"
+          },
+          {
+            "id": 63,
+            "name": "Table.docx",
+            "file": "docx"
+          }
+        ]
+      },
+      {
+        "id": 66,
+        "name": "Test",
+        "children": [
+          {
+            "id": 67,
+            "name": "Test.Rmd",
+            "file": "Rmd"
+          },
+          {
+            "id": 68,
+            "name": "Test.html",
+            "file": "html"
+          },
+          {
+            "id": 69,
+            "name": "Test.pdf",
+            "file": "pdf"
+          },
+          {
+            "id": 70,
+            "name": "Test.ipynb",
+            "file": "ipynb"
+          },
+          {
+            "id": 71,
+            "name": "Test.docx",
+            "file": "docx"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Colab Links",
+    "children": [
+      {
+        "id": 16,
+        "name": "CalculateZValue",
+        "file": "colab"
+      },
+      {
+        "id": 24,
+        "name": "ConfidenceIntervalMeans",
+        "file": "colab"
+      },
+      {
+        "id": 32,
+        "name": "NormalCurveAreaBetween",
+        "file": "colab"
+      },
+      {
+        "id": 40,
+        "name": "Simple",
+        "file": "colab"
+      },
+      {
+        "id": 48,
+        "name": "StdNormalFindAreaBetween",
+        "file": "colab"
+      },
+      {
+        "id": 56,
+        "name": "StdNormalShadedArea",
+        "file": "colab"
+      },
+      {
+        "id": 64,
+        "name": "Table",
+        "file": "colab"
+      },
+      {
+        "id": 72,
+        "name": "Test",
+        "file": "colab"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Jupyter Links",
+    "children": [
+      {
+        "id": 17,
+        "name": "CalculateZValue",
+        "file": "jupyter"
+      },
+      {
+        "id": 25,
+        "name": "ConfidenceIntervalMeans",
+        "file": "jupyter"
+      },
+      {
+        "id": 33,
+        "name": "NormalCurveAreaBetween",
+        "file": "jupyter"
+      },
+      {
+        "id": 41,
+        "name": "Simple",
+        "file": "jupyter"
+      },
+      {
+        "id": 49,
+        "name": "StdNormalFindAreaBetween",
+        "file": "jupyter"
+      },
+      {
+        "id": 57,
+        "name": "StdNormalShadedArea",
+        "file": "jupyter"
+      },
+      {
+        "id": 65,
+        "name": "Table",
+        "file": "jupyter"
+      },
+      {
+        "id": 73,
+        "name": "Test",
+        "file": "jupyter"
+      }
+    ]
+  }
+]

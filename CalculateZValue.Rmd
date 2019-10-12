@@ -1,25 +1,42 @@
 ---
+title: "Calculate z value"
 params:
-  mu:
-    value: 50 
-  sigma:
-    value: 13 
-  x:
-    value: 22
+  x: 22.2
+  mu: 23 
+  sigma: 4 
+jupyter:
+  kernelspec:
+    display_name: R
+    language: R
+    name: ir
 ---
-```{r params, echo=FALSE}
-x<-params$x; 
-mu<-params$mu; 
-numer<-(x-mu); 
-sigma<-params$sigma; 
-z<-(x-mu)/sigma
+
+```{r options, eval=FALSE, include=FALSE}
+options(repr.plot.width=4, repr.plot.height=4)
 ```
 
-Suppose that:$\mu=`r mu`$, $\sigma=`r sigma`$ and $x = `r x`$. Then we can find the value of z as follows:
+```{r params, include=FALSE}
+if(!exists("params")) {
+    params<-list(x=22.2,mu=23,sigma=4)
+}
+x<-params$x
+mu<-params$mu 
+sigma<-params$sigma 
+```
+
+```{r computed, include=FALSE}
+numer<-(x-mu); 
+z<-round((x-mu)/sigma,2)
+```
+
+Suppose that $\mu=`r mu`$, $\sigma=`r sigma`$ and $x = `r x`$. Then we can find the value of z as follows:
 
 $$
-z=\frac{x-\mu}{\sigma}
- =\frac{`r x`-`r mu`}{`r sigma`}
- =\frac{`r numer`}{`r sigma`}
- =`r z` 
+z =\frac{x-\mu}{\sigma} =\frac{`r x`-`r mu`}{`r sigma`} =\frac{`r numer`}{`r sigma`} =`r z`
 $$
+
+```{r graphics, include=FALSE}
+Z <- seq(-4, 4, length=200)
+Y <- dnorm(Z, mean=0, sd=1)
+plot(Z,Y, type = "l", lwd = 2, xlab="z", ylab = "", xlim = c(-3.5,3.5))
+```

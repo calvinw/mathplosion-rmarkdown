@@ -3,16 +3,23 @@ image: r-base
 pages:
   stage: deploy
   script:
-  - apt-get update 
-  - apt-get -y install pandoc
+  - apt-get update
+  - apt-get -y install libcurl4-openssl-dev libxml2-dev libssl-dev
+  - wget "https://github.com/jgm/pandoc/releases/download/2.7.3/pandoc-2.7.3-1-amd64.deb"
+  - dpkg -i pandoc-2.7.3-1-amd64.deb
   - wget -qO- "https://yihui.name/gh/tinytex/tools/install-unx.sh" | sh
   - Rscript -e "install.packages('rmarkdown')"
-  - Rscript -e "install.packages('ggplot2')"
-  
+  - Rscript -e "install.packages('rvest')"
+  - Rscript -e "install.packages('RCurl')"
+  - Rscript -e "install.packages('C50')"
+  - Rscript -e "install.packages('rpart')"
   - make
   - mkdir .public
-  - cp -r * .public
+  - cp -r *.Rmd *.html *.ipynb *.docx *.pdf *.md .public
+  - rm .public/header.html
+  - cp -r data.json .public
   - mv .public public
+
   artifacts:
     paths:
     - public

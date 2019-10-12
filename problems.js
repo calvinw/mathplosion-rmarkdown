@@ -6,9 +6,15 @@ fs.readdir(dirPath, function(err, files){
   filesList = files.filter(function(e){
     return path.extname(e).toLowerCase() === '.rmd'
   });
-    var id = 1;
-    var arr = [];
+
+    //filesList = filesList.reverse();
+    var id = 10;
+    var filesArray = [];
+    var colabsArray = [];
+    var jupyterArray = [];
   //console.log(filesList);
+    //
+
     for(f of filesList){
       var parsed = path.parse(f);
       var name = parsed.name;
@@ -16,19 +22,55 @@ fs.readdir(dirPath, function(err, files){
       var htmlFile = name + '.html'
       var rmdFile = name + '.Rmd'
       var pdfFile = name + '.pdf'
-	var item = {
-	  id: name,
+      var ipynbFile = name + '.ipynb'
+      var docxFile = name + '.docx'
+	
+	var fileItem = {
+	  id: id++,
 	  name: name,
 	  children: [
-	    { id: htmlFile , page: htmlFile, name: 'html', file: 'html' },
-	    { id: rmdFile, page: rmdFile, name: 'Rmd', file: 'md' },
-	    { id: pdfFile, page: pdfFile, name: 'pdf', file: 'pdf'}
+	    { id: id++, name: rmdFile, file: 'Rmd' },
+	    { id: id++, name: htmlFile, file: 'html' },
+	    { id: id++, name: pdfFile, file: 'pdf'},
+	    { id: id++, name: ipynbFile, file: 'ipynb'},
+	    { id: id++, name: docxFile, file: 'docx'}
 	  ]
 	};
-	arr.push(item);
-	id++;
-      //console.log(name);
+
+	filesArray.push(fileItem);
+
+	var colabItem = {
+	     id: id++, 
+	     name: name, 
+	     file: 'colab'
+	};
+	colabsArray.push(colabItem);
+
+	var jupyterItem = {
+	     id: id++, 
+	     name: name, 
+	     file: 'jupyter'
+	};
+	jupyterArray.push(jupyterItem);
     }
-    console.log("var jsonItems =");
-    console.log(JSON.stringify(arr, null, 2));
+
+    let myJson = [ 
+	{ 
+	    id: 1,
+	    name: "Files",
+	    children: filesArray 
+	},
+	{
+	    id: 2,
+	    name: "Colab Links",
+	    children: colabsArray 
+	},
+	{
+	    id: 3,
+	    name: "Jupyter Links",
+	    children: jupyterArray 
+	},
+    ];
+		    
+    console.log(JSON.stringify(myJson, null, 2));
 });

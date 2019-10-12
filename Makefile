@@ -1,30 +1,52 @@
-SOURCES=$(shell find . -name "*.Rmd")
-HTML_FILES = $(SOURCES:%.Rmd=%.html)
-PDF_FILES = $(SOURCES:%.Rmd=%.pdf)
-#DOCX_FILES = $(SOURCES:%.Rmd=%.docx)
-export PATH := /bin:/usr/bin:/opt/R/3.4.4/lib/R/bin:$(PATH) 
+SHELL:=/bin/bash
+SOURCES =$(shell find . -name "*.Rmd")
 
-all : $(HTML_FILES) $(PDF_FILES)
+HTML_FILES = $(SOURCES:%.Rmd=%.html)
+MD_FILES = $(SOURCES:%.Rmd=%.md)
+IPYNB_FILES = $(SOURCES:%.Rmd=%.ipynb)
+PDF_FILES = $(SOURCES:%.Rmd=%.pdf)
+DOCX_FILES = $(SOURCES:%.Rmd=%.docx)
+
+export PATH :=.:/bin:/usr/bin:$(PATH)
+
+all : $(HTML_FILES) $(PDF_FILES) $(IPYNB_FILES) $(MD_FILES) $(DOCX_FILES)
 	@echo All files are now up to date
 
-clean : 
-	@echo Removing html files...	
-	rm -f $(HTML_FILES) 
-	@echo Removing pdf files...	
-	rm -f $(PDF_FILES) 
-
-allFiles:
-	find -name '*.Rmd' | sort > allFiles 
+clean :
+	@echo Removing html, md, pdf, docx files...	
+	rm -f $(HTML_FILES) $(PDF_FILES) $(MD_FILES) $(DOCX_FILES)
+	rm -rf *_files figure
 
 %.html : %.Rmd
-	@echo Calling render for html...	
-	Rscript -e 'rmarkdown::render("$<", "html_document")'
-	@echo html render is finished...	
-	-echo $@ | nc -q .01 localhost 4000
+	@Rscript renderRmd.R $< html_document
+
+%.md : %.Rmd
+	cp $< $@
+	@sed -i 's/```{r.*/``` code/g' $@
+	@sed -i 's/```{python.*/``` code/g' $@
 
 %.pdf : %.Rmd
-	@echo Calling render for pdf...	
-	Rscript -e 'rmarkdown::render("$<", "pdf_document")'
-	@echo pdf render is finished...	
+	@Rscript renderRmd.R $< pdf_document
 
-.PHONY: all allpdf clean allFiles
+%.docx : %.Rmd
+	@Rscript renderRmd.R $< word_document
+
+%.ipynb : %.md
+	pandoc $< -o $@
+
+data: 
+	node problems.js > data.json
+
+server:
+	make -j watch nodeapp
+
+watch:
+	@echo Watching .Rmd files...	
+	@echo Will call make on changes...	
+	while true; do ls *.Rmd | entr make -j1 SERVER=yes; done
+
+nodeapp: 
+	@echo Launching app.js 
+	node app.js
+
+.PHONY: all clean

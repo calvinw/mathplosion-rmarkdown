@@ -3,7 +3,7 @@
 <head>
   <link href="https://cdn.materialdesignicons.com/2.5.94/css/materialdesignicons.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@1.x/dist/vuetify.min.css" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
   <style> 
 	body, html {
@@ -20,111 +20,201 @@
 	  border: none;
 	}
   </style> 
-  <script src="node_modules/socket.io-client/dist/socket.io.js"></script>
-  <script src="json-data.js"></script>
 </head>
 <body>
   <div id="app">
   <v-app id="inspire">
     <v-navigation-drawer fixed v-model="drawer" app >
-  <v-treeview activatable :items="items" :active="active" :open="open" open-on-click>
-      <template v-slot:prepend="{item, open}">
+  <v-treeview ref="mytreeview" activatable :items="items" :active.sync="active">
+      <template v-slot:prepend="{item}">
 	  <v-icon v-if="!item.file">
-	    mdi-file
+	    mdi-folder
 	  </v-icon>
-	  <v-icon v-else @click="display(item.id)">
+	  <v-icon v-else>
 	    {{ files[item.file] }}
 	  </v-icon>
       </template>
       <template v-slot:label="{item}">
-	    <div v-if="!item.file">
-		{{item.name}}
-	    </div>
-	    <div v-else @click="display(item.id)">
-		{{item.name}}
-	    </div>
+	    {{item.name}}
       </template>
   </v-treeview>
     </v-navigation-drawer>
     <v-toolbar color="indigo" dark fixed app>
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-      <v-toolbar-title> {{page}}</v-toolbar-title>
+      <v-toolbar-title> {{title}}</v-toolbar-title>
     </v-toolbar>
     <v-content>
       <v-container fluid fill-height fill-width>
         <v-layout justify-center align-center >
-	    <iframe id="theIframe" v-bind:src="page"></iframe>
+	   <iframe id="theIframe" :key="key" :src="page"></iframe>
         </v-layout>
       </v-container>
     </v-content>
   </v-app>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/socket.io-client@2.2.0/dist/socket.io.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@1.x/dist/vuetify.js"></script>
 
   <script>
-    new Vue({
+    let vm = new Vue({
       el: '#app',
 	  created: function () {
 	      console.log("preparing socket io");
+
 	      var self = this;
 	      var socket = io();
-	      socket.on("load-event", function (page) {
-		console.log("got the load event");
-	        console.log(page);
-
-		//var iframe = document.getElementById("theIframe");
-		//iframe.src = "http://localhost:3000/" + filename;
-		//window.location.href = "http://localhost:3000/" + data;
-
-		//self.page = "http://localhost:3000/" + filename;
-		self.load(page);
+	      socket.on("load-event", function (filename) {
+		console.log("got the load event: " + filename);
+		  Vue.set(self.active, 0, filename)
+		  //self.key = Date.now();
+		  window.scrollTo(0, document.body.scrollHeight);
+		  location.reload();
 	      });
+
+	      console.log("loading json items data");
+	      fetch('./data.json')
+	      .then(response => {
+		return response.json()
+	      })
+	      .then(data => {
+		// Work with JSON data here
+		console.log(data)
+		self.items = data;
+	      })
+	      .catch(err => {
+	        console.log("there was an error reading items json");
+	      })
 	  },
 	methods: { 
-	    display: function(page) {
-	       //ui is already set correctly for this. 
-	       this.page = page;
+	    isLocalhost: function() {
+		    if( location.hostname === '' ||
+		        location.hostname === 'localhost' ||
+			location.hostname === '127.0.0.1') 
+			return true;
+		    else 
+			return false;
 	    },
-	    load: function(page) {
-		    if(this.page === page) {
-			console.log("load: update forced");
-			var iframe = document.getElementById("theIframe");
-			iframe.src = "http://localhost:3000/" + page;
+	    localhostUrl: function() {
+		    let url = null; 
+		    if(location.hostname === '') {
+			url = "";
 		    }
+		    else if(location.hostname === 'localhost') {
+		       url = "http://localhost:3000/"
+		    }
+		    else if(location.hostname === "127.0.0.1") {
+		       url = "http://127.0.0.1:3000/"
+		    }
+		return url;
+	    },
+	    findItemById: function(id, children){
+		for(let i=0; i<children.length; i++) {
+		    let item = children[i];
+		    if(item.id === id)
+			return item;
 		    else {
-		      console.log("load: no forced update");
-		      console.log("need to adjust ui open and active");
-		      console.log(page);
-		      this.page = page;
-		      var base = this.page.substring(0, this.page.lastIndexOf('.'));
-		      this.open = [base];
-		      this.active = [this.page];
+			if(item.hasOwnProperty("children")){
+			    let found = this.findItemById(id, item.children)
+			    if(found) 
+				return found; 
+			}
 		    }
+		}
+		return null;
 	    }
 	},
-	// computed: {
-	//     open: function() {
-	// 	console.log("open for " + this.page);
-	// 	return [3];
-	//     },
-	//     active: function() {
-	// 	console.log("active for " + this.page);
-	// 	return [301];
-	//     }
-	// },
+	computed: {
+	    title: function() {
+		if(this.page === "opensInOtherWindow.html")
+		    return "";
+		else
+		    return this.page;
+	    },
+	    page: function() {
+		console.log("updating page !!!");
+		if(this.active.length ===1) {
+		    console.log("updating url: this.active[0] is: "+this.active[0]);
+		    let id = this.active[0];
+		    console.log("this.active[0] is: " + this.active[0]);
+
+		    let item = this.findItemById(id, this.items);
+
+		    let filename = item.name;
+		    const ext = item.file;
+		    //const ext = filename.substring(filename.lastIndexOf('.')+1, filename.length)
+		    console.log("hostname is " + location.hostname);
+
+		    //Try to determine if we are running in development mode 
+		    let productionUrl = "https://calvinw.gitlab.io/machine-learning-rmarkdown/"
+		    if(ext === "docx") {
+
+			if(this.isLocalhost()) {
+			    let localhostUrl = this.localhostUrl();
+			    return localhostUrl + filename;
+			}
+			else {
+			   let wordViewer = "https://view.officeapps.live.com/op/embed.aspx?src="
+			   return wordViewer + productionUrl + filename;
+			}
+		    }
+		    else if (ext === "Rmd" || 
+			     ext === "html" ||
+			     ext === "pdf" ||
+			     ext === "ipynb")
+		    
+		    {
+			if(this.isLocalhost()) {
+			    let localhostUrl = this.localhostUrl();
+			    return localhostUrl + filename;
+			}
+			else {
+			    return productionUrl + filename;
+			}
+		    }
+		    else if(ext === "colab") {
+			let baseUrl = "https://colab.research.google.com/github/calvinw/machine-learning-rmarkdown/blob/master/";
+			let url = baseUrl + item.name + ".ipynb"; 
+			window.open(url, "_blank")
+		        return "opensInOtherWindow.html";
+		    }
+		    else if(ext === "jupyter") {
+			let baseUrl = "https://nbviewer.jupyter.org/github/calvinw/machine-learning-rmarkdown/blob/master/"
+			let url = baseUrl + item.name + ".ipynb"; 
+			window.open(url, "_blank")
+		        return "opensInOtherWindow.html";
+		    }
+		}
+		else {
+		    console.log("updating page to null string");
+		    return "";
+		}
+	    }
+	},
+     watch: {
+	 items: function(val) {
+	      // this.$nextTick(() => {
+		//    this.$refs.mytreeview.updateAll(true);
+	      // });
+	 }
+     },
      data: () => ({
+	  ipythonMode: "colab",
 	  drawer: null,
-	  page: "ConfidenceIntervalMeans.html",
-	  open: ["ConfidenceIntervalMeans"],
-	  active: ["ConfidenceIntervalMeans.html"],
+	  key: null,
+	  active: [],
 	  files: {
-	    html: 'mdi-code-tags',
-	    md: 'mdi-markdown',
-	    pdf: 'mdi-file-pdf'
+	    html: 'mdi-file-xml',
+	    Rmd: 'mdi-markdown',
+	    pdf: 'mdi-file-pdf',
+	    ipynb: 'mdi-file',
+	    docx: 'mdi-file-word',
+	    colab: 'mdi-open-in-new',
+	    jupyter: 'mdi-open-in-new',
+	    googledoc: 'mdi-open-in-new'
 	  },
-	 items: jsonItems 
+	 items: [] 
 	})
     })
   </script>
