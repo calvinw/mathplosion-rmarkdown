@@ -147,7 +147,7 @@
 		    console.log("hostname is " + location.hostname);
 
 		    //Try to determine if we are running in development mode 
-		    let productionUrl = "https://calvinw.gitlab.io/machine-learning-rmarkdown/"
+		    let productionUrl = "https://calvinw.gitlab.io/mathplosion-rmarkdown/"
 		    if(ext === "docx") {
 
 			if(this.isLocalhost()) {
@@ -174,13 +174,13 @@
 			}
 		    }
 		    else if(ext === "colab") {
-			let baseUrl = "https://colab.research.google.com/github/calvinw/machine-learning-rmarkdown/blob/master/";
+			let baseUrl = "https://colab.research.google.com/github/calvinw/mathplosion-rmarkdown/blob/master/";
 			let url = baseUrl + item.name + ".ipynb"; 
 			window.open(url, "_blank")
 		        return "opensInOtherWindow.html";
 		    }
 		    else if(ext === "jupyter") {
-			let baseUrl = "https://nbviewer.jupyter.org/github/calvinw/machine-learning-rmarkdown/blob/master/"
+			let baseUrl = "https://nbviewer.jupyter.org/github/calvinw/mathplosion-rmarkdown/blob/master/"
 			let url = baseUrl + item.name + ".ipynb"; 
 			window.open(url, "_blank")
 		        return "opensInOtherWindow.html";
