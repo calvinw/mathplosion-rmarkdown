@@ -12,7 +12,6 @@ pages:
   - make
   - mkdir .public
   - cp -r *.Rmd *.html *.ipynb *.docx *.pdf *.md .public
-  - rm .public/header.html
   - cp -r data.json .public
   - mv .public public
 
