@@ -1,5 +1,5 @@
 ---
-title: "Calculate z value"
+title: "Calculate Z Value"
 params:
   x: 22.2
   mu: 23 

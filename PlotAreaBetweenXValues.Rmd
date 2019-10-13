@@ -1,8 +1,10 @@
 ---
-title: "Plot Area Between Z-Values"
+title: "Plot Area Between X-Values"
 params:
-  a: -1.4 
-  b: 1.32 
+  a: 3.8 
+  b: 4.25 
+  mu: 4.0 
+  sigma: 0.2 
 jupyter:
   kernelspec:
     display_name: R
@@ -16,20 +18,20 @@ knitr::opts_chunk$set(include=FALSE)
 
 ```{r params}
 if(!exists("params")) {
-    params<-list(a=-1.4,b=1.32)
+    params<-list(a=3.8,b=4.25,mu=4.0,sigma=0.2)
 }
 a<-params$a
 b<-params$b
+mu<-params$mu
+sigma<-params$sigma
 ```
 
 ```{r plotsetup}
-#
 source("graphics_utils.R")
 ```
 
-Here is a graph of the area between $z=`r a`$ and $z=`r b`$:
+Here is a graph of the area between $x=`r a`$ and $x=`r b`$:
 
 ```{r area, include=TRUE, echo=FALSE, fig.align="center", fig.width=4, fig.height=2.5} 
-z_draw_area_between(a,b)
-normal_draw_area_between(3.8,4.25,4,0.2)
+normal_draw_area_between(a,b,mu,sigma)
 ```

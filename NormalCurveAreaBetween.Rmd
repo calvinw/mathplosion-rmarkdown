@@ -1,10 +1,10 @@
 ---
 title: "Normal Area Between"
 params:
-  a: 4.2 
+  a: 3.3 
   b: 5.5 
   mu: 5 
-  sigma: 2 
+  sigma: 1.2 
 jupyter:
   kernelspec:
     display_name: R
@@ -13,12 +13,12 @@ jupyter:
 ---
 
 ```{r options, eval=FALSE, include=FALSE}
-options(repr.plot.width=4, repr.plot.height=4)
+options(repr.plot.width=4, repr.plot.height=2.5)
 ```
 
 ```{r params, include=FALSE}
 if(!exists("params")) {
-    params<-list(a=1.23,b=1.75,mu=0,sigma=1.0)
+    params<-list(a=3.3,b=5.5,mu=5,sigma=1.2)
 }
 a<-params$a 
 b<-params$b 
@@ -27,32 +27,60 @@ sigma<-params$sigma
 ```
 
 ```{r computed, include=FALSE}
-lowerz<-(a-mu)/sigma
-upperz<-(b-mu)/sigma
+lowerz<-round((a-mu)/sigma,2)
+upperz<-round((b-mu)/sigma,2)
 areaB <- round(pnorm(upperz),4)
 areaA <- round(pnorm(lowerz),4)
 areaBetween <- round(areaB-areaA,4)
 ```
 
-We are going to find the area between the two x-values $x=a=`r a`$ and $x=b=`r b`$ by first converting them both to z-values, then finding the area between those z-values.
+```{r graphicsutils, include=FALSE}
+source("graphics_utils.R")
+```
 
-First lets find the "lower z-value". This is the z-value for the left endpoint ($x=a=`r a`$):
+We are going to find the area between the two x-values $x=`r a`$ and $x=`r b`$ for a normal distribution with mean of $\mu = `r mu`$ and with a standard deviation of $\sigma = `r sigma`$.   
+
+Here is what the area looks like: 
+
+```{r xarea, include=TRUE, echo=FALSE, fig.align="center", fig.width=4, fig.height=2.5} 
+normal_draw_area_between(a,b,mu,sigma)
+```
+
+We will convert both the x-values to z-values, then find the area between those z-values using the standard normal distribution (z distribution).
+
+Lets find the "lower z-value" first. This is the z-value for the left endpoint ($x=`r a`$):
 
 $$
 z =\frac{x-\mu}{\sigma} =\frac{`r a`-`r mu`}{`r sigma`} =\frac{`r a-mu`}{`r sigma`} =`r round(lowerz,2)`
 $$
 
-Next lets find the "upper z-value". This is the z-value for the right endpoint ($x=b=`r b`$):
+Next lets find the "upper z-value". This is the z-value for the right endpoint ($x=`r b`$):
 
 $$
 z =\frac{x-\mu}{\sigma} =\frac{`r b`-`r mu`}{`r sigma`} =\frac{`r b-mu`}{`r sigma`} =`r round(upperz,2)`
 $$
 
-Now we can find the area between these two z-values by subtracting the left tail area for each one.       
+Now the area that we want that is between $z = `r lowerz`$ and $z = `r upperz`$
 
-Using the standard normal table we find the left tail area for $z=`r upperz`$ is $`r areaB`$ and the left tail area for $z=`r lowerz`$ is $`r areaA`$.     
+```{r zarea, include=TRUE, echo=FALSE, fig.align="center", fig.width=4, fig.height=2.5} 
+z_draw_area_between(lowerz,upperz)
+```
 
-We subtract these two areas to find the area between them: 
+We will find the area between these two z-values by subtracting the left tail areas for each one.       
+
+Using the standard normal table we find the left tail area for $z=`r upperz`$ first:
+
+$$
+\text{left tail area for `r upperz`} =`r areaB`
+$$
+
+Then we find the left tail area for $z = `r lowerz`$ next: 
+
+$$
+\text{left tail area for `r lowerz`} =`r areaA`
+$$
+
+Finally subtract these two areas to find the area between the two: 
 
 $$
 \text{area between}=`r areaB` - `r areaA`=`r areaBetween`
