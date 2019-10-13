@@ -31,5 +31,4 @@ Here is a graph of the area between $z=`r a`$ and $z=`r b`$:
 
 ```{r area, include=TRUE, echo=FALSE, fig.align="center", fig.width=4, fig.height=2.5} 
 z_draw_area_between(a,b)
-normal_draw_area_between(3.8,4.25,4,0.2)
 ```
