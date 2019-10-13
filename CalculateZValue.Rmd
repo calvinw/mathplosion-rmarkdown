@@ -11,11 +11,12 @@ jupyter:
     name: ir
 ---
 
-```{r options, eval=FALSE, include=FALSE}
-options(repr.plot.width=4, repr.plot.height=4)
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(include=FALSE)
 ```
 
-```{r params, include=FALSE}
+```{r params}
+# This is here for jupyter versions
 if(!exists("params")) {
     params<-list(x=22.2,mu=23,sigma=4)
 }
@@ -24,9 +25,11 @@ mu<-params$mu
 sigma<-params$sigma 
 ```
 
-```{r computed, include=FALSE}
+```{r computed}
 numer<-(x-mu); 
 z<-round((x-mu)/sigma,2)
+numer
+z
 ```
 
 Suppose that $\mu=`r mu`$, $\sigma=`r sigma`$ and $x = `r x`$. Then we can find the value of z as follows:
@@ -34,9 +37,3 @@ Suppose that $\mu=`r mu`$, $\sigma=`r sigma`$ and $x = `r x`$. Then we can find 
 $$
 z =\frac{x-\mu}{\sigma} =\frac{`r x`-`r mu`}{`r sigma`} =\frac{`r numer`}{`r sigma`} =`r z`
 $$
-
-```{r graphics, include=FALSE}
-Z <- seq(-4, 4, length=200)
-Y <- dnorm(Z, mean=0, sd=1)
-plot(Z,Y, type = "l", lwd = 2, xlab="z", ylab = "", xlim = c(-3.5,3.5))
-```

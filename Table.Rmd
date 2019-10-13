@@ -1,13 +1,12 @@
 ---
-Title: Standard Normal LookUp
+title: Standard Normal LookUp
 params:
-  z:
-    input: slider
-    label: This is Z
-    max: 3.5
-    min: -3.5
-    step: 0.01
-    value: 1.23
+  z: 1.23
+jupyter:
+  kernelspec:
+    display_name: R
+    language: R
+    name: ir
 ---
 
 Here is te table...

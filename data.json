@@ -98,31 +98,31 @@
       },
       {
         "id": 34,
-        "name": "Simple",
+        "name": "PlotAreaBetweenZValues",
         "children": [
           {
             "id": 35,
-            "name": "Simple.Rmd",
+            "name": "PlotAreaBetweenZValues.Rmd",
             "file": "Rmd"
           },
           {
             "id": 36,
-            "name": "Simple.html",
+            "name": "PlotAreaBetweenZValues.html",
             "file": "html"
           },
           {
             "id": 37,
-            "name": "Simple.pdf",
+            "name": "PlotAreaBetweenZValues.pdf",
             "file": "pdf"
           },
           {
             "id": 38,
-            "name": "Simple.ipynb",
+            "name": "PlotAreaBetweenZValues.ipynb",
             "file": "ipynb"
           },
           {
             "id": 39,
-            "name": "Simple.docx",
+            "name": "PlotAreaBetweenZValues.docx",
             "file": "docx"
           }
         ]
@@ -274,7 +274,7 @@
       },
       {
         "id": 40,
-        "name": "Simple",
+        "name": "PlotAreaBetweenZValues",
         "file": "colab"
       },
       {
@@ -320,7 +320,7 @@
       },
       {
         "id": 41,
-        "name": "Simple",
+        "name": "PlotAreaBetweenZValues",
         "file": "jupyter"
       },
       {

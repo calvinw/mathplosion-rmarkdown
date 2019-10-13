@@ -3,6 +3,11 @@ Title: "Shaded Area Under Standard Normal Curve"
 params: 
   a: -0.64 
   b: 2.03
+jupyter:
+  kernelspec:
+    display_name: R
+    language: R
+    name: ir
 ---
 
 ```{r params, include=FALSE}

@@ -1,42 +1,43 @@
 ---
-title: "Standard Normal Curve Area Between"
+title: "Standard Normal-Area Between Z Values"
 params:
-  a:
-    input: numeric
-    label: a 
-    max: 3.5
-    min: -3.5
-    step: .1
-    value: 2.0 
-  b:
-    input: numeric
-    label: b
-    max: 3.5
-    min: -3.5
-    step: .1
-    value: -3.5 
+  a: -1.0
+  b: 2.1
+jupyter:
+  kernelspec:
+    display_name: R
+    language: R
+    name: ir
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-# a<-params$a
-# b<-params$b
-a<- -1.0
-b<- 2.1
+knitr::opts_chunk$set(include=FALSE)
+knitr::opts_chunk$set(fig.align='center', fig.width=4, fig.height=3)
 library(ggplot2)
 ```
 
-## Area under normal curve between two values
+```{r params}
+# This is here for jupyter versions
+if(!exists("params")) {
+    params<-list(a=-1.0,b=2.1)
+}
+a<-params$a
+b<-params$b
+```
 
-Hi
+```{r calculated}
+areaB <- round(pnorm(b),4)
+areaA <- round(pnorm(a),4)
+areaBetween <- round(areaB-areaA, 4)
+```
 
-We are going to find the area between the two z-values by using the standard normal (z) table:
+We are going to find the area between the two z-values by using the standard normal (z) table.
 
 Here $a =`r a`$ and $b =`r b`$
 
 Here is a picture of the area that we want:
 
-```{r area, echo=FALSE}
+```{r area, echo=FALSE, include=TRUE}
 #change dev to svg if need to
 
 dat <- data.frame(x=c(-3.5, 3.5))
@@ -55,28 +56,22 @@ ggplot(dat, aes(x=x)) +
 	scale_y_continuous(breaks = seq(0, .4, by = 0.2)) +
 	annotate("text", 
 		 x = a, 
-		 y = -0.01, 
+		 y = -0.02, 
 		 label = labelA) +
 	annotate("text", 
 		 x = b, 
-		 y = -0.01, 
+		 y = -0.02, 
 		 label = labelB)
 ```
 
 First we find the left tail area for z-value on the right: $b =`r b`$
 
-```{r areab, echo = FALSE}
-areaB <- round(pnorm(b),4)
-```
 $$
 \text{left tail area for b} = `r areaB`
 $$
 
 Then we find the left tail area for the z-value on the left $a =`r a`$:
 
-```{r areaA, echo = FALSE}
-areaA <- round(pnorm(a),4)
-```
 $$
 \text{left tail area for a} = `r areaA`
 $$
@@ -84,5 +79,5 @@ $$
 Finally we find the area between the two z-values by subtracting the left tail area up to b by the left tail area up to a. This leaves us with the area between the two z-values:
 
 $$
-\text{area between}=`r areaB` - `r areaA`=`r round(areaB-areaA, 4)`
+\text{area between}=`r areaB` - `r areaA`=`r areaBetween`
 $$

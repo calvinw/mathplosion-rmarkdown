@@ -1,0 +1,37 @@
+---
+title: "Area between two z-values"
+params:
+  a: -1.4 
+  b: 1.32 
+jupyter:
+  kernelspec:
+    display_name: R
+    language: R
+    name: ir
+---
+
+```{r setup, include=FALSE}
+library(ggplot2)
+dnorm_limit <- function(x) {
+ y <- dnorm(x)
+ y[x < params$a | x > params$b] <- NA
+ return(y)
+}
+```
+
+Here is the picture of the area between that we want:
+
+```{r area, echo=FALSE}
+#change dev to svg if need to
+dat <- data.frame(x=c(-3.5, 3.5))
+
+ggplot(dat, aes(x=x)) +
+stat_function(fun=dnorm_limit, geom="area", fill="blue", alpha=0.5) +
+stat_function(fun=dnorm) +
+labs(x = "z", y = "") +
+#geom_hline(yintercept=0) +
+scale_x_continuous(breaks = seq(-3, 3, by = 1.0)) +
+# scale_y_continuous(breaks = seq(0, .4, by = 0.2)) +
+annotate("text", x = params$b, y = -0.01, label = params$b) +
+annotate("text", x = params$a, y = -0.01, label = params$a)
+```

@@ -1,5 +1,5 @@
 ---
-name: "Confidence Interval for Means"
+title: "Confidence Interval for Means"
 params:
   xbar: 12.3
   sigma: 4

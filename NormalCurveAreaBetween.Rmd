@@ -1,10 +1,10 @@
 ---
-title: "Area between"
+title: "Normal Area Between"
 params:
-  a: 22.2
-  b: 4 
-  mu: 0 
-  sigma: 1.0 
+  a: 4.2 
+  b: 5.5 
+  mu: 5 
+  sigma: 2 
 jupyter:
   kernelspec:
     display_name: R
@@ -12,7 +12,7 @@ jupyter:
     name: ir
 ---
 
-```{r options, eval=FALSE}
+```{r options, eval=FALSE, include=FALSE}
 options(repr.plot.width=4, repr.plot.height=4)
 ```
 
@@ -26,57 +26,34 @@ mu<-params$mu
 sigma<-params$sigma 
 ```
 
-```{r setup, include=FALSE}
-library(ggplot2)
-dnorm_limit <- function(x) {
- y <- dnorm(x)
- y[x < -1.2 | x > 2.1] <- NA
- return(y)
-}
+```{r computed, include=FALSE}
+lowerz<-(a-mu)/sigma
+upperz<-(b-mu)/sigma
+areaB <- round(pnorm(upperz),4)
+areaA <- round(pnorm(lowerz),4)
+areaBetween <- round(areaB-areaA,4)
 ```
 
-We are going to find the area between the two x-values by using the standard normal (z) table:
+We are going to find the area between the two x-values $x=a=`r a`$ and $x=b=`r b`$ by first converting them both to z-values, then finding the area between those z-values.
 
-For the left endpoint (x=a) the z-value is:
-
-$$
-`r {
-    x<-params$a; 
-    mu<-params$mu; 
-    numer<-(x-mu); 
-    sigma<-params$sigma; 
-    z<-(x-mu)/sigma
-    sprintf("z=\\frac{x-\\mu}{\\sigma}=\\frac{%s-%s}{%s}=\\frac{%s}{%s}=%s",
-                                                x,mu,sigma,numer,sigma,z)
-   }`
-$$
-
-For the right endpoint (x=b) the z-value is:
+First lets find the "lower z-value". This is the z-value for the left endpoint ($x=a=`r a`$):
 
 $$
-`r {
-    x<-params$b; 
-    mu<-params$mu; 
-    numer<-(x-mu); 
-    sigma<-params$sigma; 
-    z<-(x-mu)/sigma
-    sprintf("z=\\frac{x-\\mu}{\\sigma}=\\frac{%s-%s}{%s}=\\frac{%s}{%s}=%s",
-                                                x,mu,sigma,numer,sigma,z)
-   }`
+z =\frac{x-\mu}{\sigma} =\frac{`r a`-`r mu`}{`r sigma`} =\frac{`r a-mu`}{`r sigma`} =`r round(lowerz,2)`
 $$
 
-Here is a picture of the area that we want.
+Next lets find the "upper z-value". This is the z-value for the right endpoint ($x=b=`r b`$):
 
-```{r area, echo=FALSE}
-#change dev to svg if need to
-#dat <- data.frame(x=c(-3.5, 3.5))
-#ggplot(dat, aes(x=x)) +
-#stat_function(fun=dnorm_limit, geom="area", fill="blue", alpha=0.5) +
-#stat_function(fun=dnorm) +
-#labs(x = "z", y = "") +
-#geom_hline(yintercept=0) +
-#scale_x_continuous(breaks = seq(-3, 3, by = 1.0)) +
-#scale_y_continuous(breaks = seq(0, .4, by = 0.2)) +
-#annotate("text", x = -1.2, y = -0.01, label = "hi") +
-#annotate("text", x = 2.1, y = -0.01, label = "bye")
-```
+$$
+z =\frac{x-\mu}{\sigma} =\frac{`r b`-`r mu`}{`r sigma`} =\frac{`r b-mu`}{`r sigma`} =`r round(upperz,2)`
+$$
+
+Now we can find the area between these two z-values by subtracting the left tail area for each one.       
+
+Using the standard normal table we find the left tail area for $z=`r upperz`$ is $`r areaB`$ and the left tail area for $z=`r lowerz`$ is $`r areaA`$.     
+
+We subtract these two areas to find the area between them: 
+
+$$
+\text{area between}=`r areaB` - `r areaA`=`r areaBetween`
+$$
