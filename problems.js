@@ -20,6 +20,7 @@ fs.readdir(dirPath, function(err, files){
       var name = parsed.name;
 
       var htmlFile = name + '.html'
+      var htmlWebtexFile = name + '-webtex' + '.html'
       var rmdFile = name + '.Rmd'
       var pdfFile = name + '.pdf'
       var ipynbFile = name + '.ipynb'
@@ -31,6 +32,7 @@ fs.readdir(dirPath, function(err, files){
 	  children: [
 	    { id: id++, name: rmdFile, file: 'Rmd' },
 	    { id: id++, name: htmlFile, file: 'html' },
+	    { id: id++, name: htmlWebtexFile, file: 'webtex' },
 	    { id: id++, name: pdfFile, file: 'pdf'},
 	    { id: id++, name: ipynbFile, file: 'ipynb'},
 	    { id: id++, name: docxFile, file: 'docx'}
