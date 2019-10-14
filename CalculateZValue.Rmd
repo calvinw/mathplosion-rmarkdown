@@ -12,10 +12,6 @@ jupyter:
 ---
 
 ```{r setup, include=FALSE}
-# output:
-#   html_document:
-#       pandoc_args: ["--webtex=http://chart.googleapis.com/chart?cht=tx&chl="]
-#       mathjax: null
 knitr::opts_chunk$set(include=FALSE)
 ```
 

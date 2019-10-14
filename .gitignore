@@ -2,7 +2,6 @@
 .Rhistory
 .RData
 .Ruserdata
-*.Rproj
 *.html
 *.pdf
 *.docx
@@ -11,6 +10,7 @@
 !header.html
 !index.html
 !page.html
+!README.md
 *.local
 lsAll
 allFiles
