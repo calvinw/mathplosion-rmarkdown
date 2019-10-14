@@ -23,7 +23,7 @@ fs.readdir(dirPath, function(err, files){
       var htmlWebtexFile = name + '-webtex' + '.html'
       var rmdFile = name + '.Rmd'
       var pdfFile = name + '.pdf'
-      var ipynbFile = name + '.ipynb'
+      //var ipynbFile = name + '.ipynb'
       var docxFile = name + '.docx'
 	
 	var fileItem = {
@@ -34,26 +34,26 @@ fs.readdir(dirPath, function(err, files){
 	    { id: id++, name: htmlFile, file: 'html' },
 	    { id: id++, name: htmlWebtexFile, file: 'webtex' },
 	    { id: id++, name: pdfFile, file: 'pdf'},
-	    { id: id++, name: ipynbFile, file: 'ipynb'},
+	    // { id: id++, name: ipynbFile, file: 'ipynb'},
 	    { id: id++, name: docxFile, file: 'docx'}
 	  ]
 	};
 
 	filesArray.push(fileItem);
 
-	var colabItem = {
-	     id: id++, 
-	     name: name, 
-	     file: 'colab'
-	};
-	colabsArray.push(colabItem);
-
-	var jupyterItem = {
-	     id: id++, 
-	     name: name, 
-	     file: 'jupyter'
-	};
-	jupyterArray.push(jupyterItem);
+	// var colabItem = {
+	//      id: id++, 
+	//      name: name, 
+	//      file: 'colab'
+	// };
+	// colabsArray.push(colabItem);
+        //
+	// var jupyterItem = {
+	//      id: id++, 
+	//      name: name, 
+	//      file: 'jupyter'
+	// };
+	// jupyterArray.push(jupyterItem);
     }
 
     let myJson = [ 
@@ -61,17 +61,17 @@ fs.readdir(dirPath, function(err, files){
 	    id: 1,
 	    name: "Files",
 	    children: filesArray 
-	},
-	{
-	    id: 2,
-	    name: "Colab Links",
-	    children: colabsArray 
-	},
-	{
-	    id: 3,
-	    name: "Jupyter Links",
-	    children: jupyterArray 
-	},
+	}
+	// {
+	//     id: 2,
+	//     name: "Colab Links",
+	//     children: colabsArray 
+	// },
+	// {
+	//     id: 3,
+	//     name: "Jupyter Links",
+	//     children: jupyterArray 
+	// },
     ];
 		    
     console.log(JSON.stringify(myJson, null, 2));

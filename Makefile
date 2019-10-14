@@ -7,6 +7,8 @@ MD_FILES = $(SOURCES:%.Rmd=%.md)
 IPYNB_FILES = $(SOURCES:%.Rmd=%.ipynb)
 PDF_FILES = $(SOURCES:%.Rmd=%.pdf)
 DOCX_FILES = $(SOURCES:%.Rmd=%.docx)
+MD_FILES =
+IPYNB_FILES =
 
 export PATH :=.:/bin:/usr/bin:$(PATH)
 

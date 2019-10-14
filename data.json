@@ -29,405 +29,258 @@
           },
           {
             "id": 15,
-            "name": "CalculateZValue.ipynb",
-            "file": "ipynb"
-          },
-          {
-            "id": 16,
             "name": "CalculateZValue.docx",
             "file": "docx"
           }
         ]
       },
       {
-        "id": 19,
+        "id": 16,
         "name": "ConfidenceIntervalMeans",
         "children": [
           {
-            "id": 20,
+            "id": 17,
             "name": "ConfidenceIntervalMeans.Rmd",
             "file": "Rmd"
           },
           {
-            "id": 21,
+            "id": 18,
             "name": "ConfidenceIntervalMeans.html",
             "file": "html"
           },
           {
-            "id": 22,
+            "id": 19,
             "name": "ConfidenceIntervalMeans-webtex.html",
             "file": "webtex"
           },
           {
-            "id": 23,
+            "id": 20,
             "name": "ConfidenceIntervalMeans.pdf",
             "file": "pdf"
           },
           {
-            "id": 24,
-            "name": "ConfidenceIntervalMeans.ipynb",
-            "file": "ipynb"
-          },
-          {
-            "id": 25,
+            "id": 21,
             "name": "ConfidenceIntervalMeans.docx",
             "file": "docx"
           }
         ]
       },
       {
-        "id": 28,
+        "id": 22,
         "name": "NormalCurveAreaBetween",
         "children": [
           {
-            "id": 29,
+            "id": 23,
             "name": "NormalCurveAreaBetween.Rmd",
             "file": "Rmd"
           },
           {
-            "id": 30,
+            "id": 24,
             "name": "NormalCurveAreaBetween.html",
             "file": "html"
           },
           {
-            "id": 31,
+            "id": 25,
             "name": "NormalCurveAreaBetween-webtex.html",
             "file": "webtex"
           },
           {
-            "id": 32,
+            "id": 26,
             "name": "NormalCurveAreaBetween.pdf",
             "file": "pdf"
           },
           {
-            "id": 33,
-            "name": "NormalCurveAreaBetween.ipynb",
-            "file": "ipynb"
-          },
-          {
-            "id": 34,
+            "id": 27,
             "name": "NormalCurveAreaBetween.docx",
             "file": "docx"
           }
         ]
       },
       {
-        "id": 37,
+        "id": 28,
         "name": "PlotAreaBetweenXValues",
         "children": [
           {
-            "id": 38,
+            "id": 29,
             "name": "PlotAreaBetweenXValues.Rmd",
             "file": "Rmd"
           },
           {
-            "id": 39,
+            "id": 30,
             "name": "PlotAreaBetweenXValues.html",
             "file": "html"
           },
           {
-            "id": 40,
+            "id": 31,
             "name": "PlotAreaBetweenXValues-webtex.html",
             "file": "webtex"
           },
           {
-            "id": 41,
+            "id": 32,
             "name": "PlotAreaBetweenXValues.pdf",
             "file": "pdf"
           },
           {
-            "id": 42,
-            "name": "PlotAreaBetweenXValues.ipynb",
-            "file": "ipynb"
-          },
-          {
-            "id": 43,
+            "id": 33,
             "name": "PlotAreaBetweenXValues.docx",
             "file": "docx"
           }
         ]
       },
       {
-        "id": 46,
+        "id": 34,
         "name": "PlotAreaBetweenZValues",
         "children": [
           {
-            "id": 47,
+            "id": 35,
             "name": "PlotAreaBetweenZValues.Rmd",
             "file": "Rmd"
           },
           {
-            "id": 48,
+            "id": 36,
             "name": "PlotAreaBetweenZValues.html",
             "file": "html"
           },
           {
-            "id": 49,
+            "id": 37,
             "name": "PlotAreaBetweenZValues-webtex.html",
             "file": "webtex"
           },
           {
-            "id": 50,
+            "id": 38,
             "name": "PlotAreaBetweenZValues.pdf",
             "file": "pdf"
           },
           {
-            "id": 51,
-            "name": "PlotAreaBetweenZValues.ipynb",
-            "file": "ipynb"
-          },
-          {
-            "id": 52,
+            "id": 39,
             "name": "PlotAreaBetweenZValues.docx",
             "file": "docx"
           }
         ]
       },
       {
-        "id": 55,
+        "id": 40,
         "name": "StdNormalFindAreaBetween",
         "children": [
           {
-            "id": 56,
+            "id": 41,
             "name": "StdNormalFindAreaBetween.Rmd",
             "file": "Rmd"
           },
           {
-            "id": 57,
+            "id": 42,
             "name": "StdNormalFindAreaBetween.html",
             "file": "html"
           },
           {
-            "id": 58,
+            "id": 43,
             "name": "StdNormalFindAreaBetween-webtex.html",
             "file": "webtex"
           },
           {
-            "id": 59,
+            "id": 44,
             "name": "StdNormalFindAreaBetween.pdf",
             "file": "pdf"
           },
           {
-            "id": 60,
-            "name": "StdNormalFindAreaBetween.ipynb",
-            "file": "ipynb"
-          },
-          {
-            "id": 61,
+            "id": 45,
             "name": "StdNormalFindAreaBetween.docx",
             "file": "docx"
           }
         ]
       },
       {
-        "id": 64,
+        "id": 46,
         "name": "StdNormalShadedArea",
         "children": [
           {
-            "id": 65,
+            "id": 47,
             "name": "StdNormalShadedArea.Rmd",
             "file": "Rmd"
           },
           {
-            "id": 66,
+            "id": 48,
             "name": "StdNormalShadedArea.html",
             "file": "html"
           },
           {
-            "id": 67,
+            "id": 49,
             "name": "StdNormalShadedArea-webtex.html",
             "file": "webtex"
           },
           {
-            "id": 68,
+            "id": 50,
             "name": "StdNormalShadedArea.pdf",
             "file": "pdf"
           },
           {
-            "id": 69,
-            "name": "StdNormalShadedArea.ipynb",
-            "file": "ipynb"
-          },
-          {
-            "id": 70,
+            "id": 51,
             "name": "StdNormalShadedArea.docx",
             "file": "docx"
           }
         ]
       },
       {
-        "id": 73,
+        "id": 52,
         "name": "Table",
         "children": [
           {
-            "id": 74,
+            "id": 53,
             "name": "Table.Rmd",
             "file": "Rmd"
           },
           {
-            "id": 75,
+            "id": 54,
             "name": "Table.html",
             "file": "html"
           },
           {
-            "id": 76,
+            "id": 55,
             "name": "Table-webtex.html",
             "file": "webtex"
           },
           {
-            "id": 77,
+            "id": 56,
             "name": "Table.pdf",
             "file": "pdf"
           },
           {
-            "id": 78,
-            "name": "Table.ipynb",
-            "file": "ipynb"
-          },
-          {
-            "id": 79,
+            "id": 57,
             "name": "Table.docx",
             "file": "docx"
           }
         ]
       },
       {
-        "id": 82,
+        "id": 58,
         "name": "Test",
         "children": [
           {
-            "id": 83,
+            "id": 59,
             "name": "Test.Rmd",
             "file": "Rmd"
           },
           {
-            "id": 84,
+            "id": 60,
             "name": "Test.html",
             "file": "html"
           },
           {
-            "id": 85,
+            "id": 61,
             "name": "Test-webtex.html",
             "file": "webtex"
           },
           {
-            "id": 86,
+            "id": 62,
             "name": "Test.pdf",
             "file": "pdf"
           },
           {
-            "id": 87,
-            "name": "Test.ipynb",
-            "file": "ipynb"
-          },
-          {
-            "id": 88,
+            "id": 63,
             "name": "Test.docx",
             "file": "docx"
           }
         ]
-      }
-    ]
-  },
-  {
-    "id": 2,
-    "name": "Colab Links",
-    "children": [
-      {
-        "id": 17,
-        "name": "CalculateZValue",
-        "file": "colab"
-      },
-      {
-        "id": 26,
-        "name": "ConfidenceIntervalMeans",
-        "file": "colab"
-      },
-      {
-        "id": 35,
-        "name": "NormalCurveAreaBetween",
-        "file": "colab"
-      },
-      {
-        "id": 44,
-        "name": "PlotAreaBetweenXValues",
-        "file": "colab"
-      },
-      {
-        "id": 53,
-        "name": "PlotAreaBetweenZValues",
-        "file": "colab"
-      },
-      {
-        "id": 62,
-        "name": "StdNormalFindAreaBetween",
-        "file": "colab"
-      },
-      {
-        "id": 71,
-        "name": "StdNormalShadedArea",
-        "file": "colab"
-      },
-      {
-        "id": 80,
-        "name": "Table",
-        "file": "colab"
-      },
-      {
-        "id": 89,
-        "name": "Test",
-        "file": "colab"
-      }
-    ]
-  },
-  {
-    "id": 3,
-    "name": "Jupyter Links",
-    "children": [
-      {
-        "id": 18,
-        "name": "CalculateZValue",
-        "file": "jupyter"
-      },
-      {
-        "id": 27,
-        "name": "ConfidenceIntervalMeans",
-        "file": "jupyter"
-      },
-      {
-        "id": 36,
-        "name": "NormalCurveAreaBetween",
-        "file": "jupyter"
-      },
-      {
-        "id": 45,
-        "name": "PlotAreaBetweenXValues",
-        "file": "jupyter"
-      },
-      {
-        "id": 54,
-        "name": "PlotAreaBetweenZValues",
-        "file": "jupyter"
-      },
-      {
-        "id": 63,
-        "name": "StdNormalFindAreaBetween",
-        "file": "jupyter"
-      },
-      {
-        "id": 72,
-        "name": "StdNormalShadedArea",
-        "file": "jupyter"
-      },
-      {
-        "id": 81,
-        "name": "Table",
-        "file": "jupyter"
-      },
-      {
-        "id": 90,
-        "name": "Test",
-        "file": "jupyter"
       }
     ]
   }
