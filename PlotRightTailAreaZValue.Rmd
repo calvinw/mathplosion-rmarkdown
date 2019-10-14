@@ -1,0 +1,32 @@
+---
+title: "Plot Right Tail Area Z-Value"
+params:
+  z: 1.23 
+jupyter:
+  kernelspec:
+    display_name: R
+    language: R
+    name: ir
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(include=FALSE)
+```
+
+```{r params}
+if(!exists("params")) {
+    params<-list(z=1.23)
+}
+z<-params$z
+```
+
+```{r plotsetup}
+#
+source("graphics_utils.R")
+```
+
+Here is a graph of the right tail area for $z=`r z`$:
+
+```{r area, include=TRUE, echo=FALSE, fig.align="center", fig.width=4, fig.height=2.5} 
+z_draw_right_tail_area(z)
+```
