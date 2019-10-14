@@ -1,5 +1,7 @@
 
-install.packages("ggplot2")
+if(!require("ggplot2")) 
+    install.packages("ggplot2")
+
 library("ggplot2")
 
 z_draw_area_between<- function(z1,z2) {
