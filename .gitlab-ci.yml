@@ -11,7 +11,7 @@ pages:
   - Rscript -e "install.packages('ggplot2')"
   - make
   - mkdir .public
-  - cp -r *.Rmd *.html *.ipynb *.docx *.pdf *.md .public
+  - cp -r *.Rmd *.html *.docx *.pdf .public
   - cp -r data.json .public
   - mv .public public
 
