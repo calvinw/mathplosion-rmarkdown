@@ -3,21 +3,20 @@ SOURCES =$(shell find . -name "*.Rmd")
 
 HTML_FILES = $(SOURCES:%.Rmd=%.html)
 HTMLWEBTEX_FILES = $(SOURCES:%.Rmd=%-webtex.html)
-MD_FILES = $(SOURCES:%.Rmd=%.md)
-IPYNB_FILES = $(SOURCES:%.Rmd=%.ipynb)
 PDF_FILES = $(SOURCES:%.Rmd=%.pdf)
 DOCX_FILES = $(SOURCES:%.Rmd=%.docx)
-MD_FILES =
-IPYNB_FILES =
+# HTMLWEBTEX_FILES =
+# PDF_FILES =
+# DOCX_FILES =
 
 export PATH :=.:/bin:/usr/bin:$(PATH)
 
-all : $(HTMLWEBTEX_FILES) $(HTML_FILES) $(PDF_FILES) $(IPYNB_FILES) $(MD_FILES) $(DOCX_FILES)
+all : $(HTMLWEBTEX_FILES) $(HTML_FILES) $(PDF_FILES) $(DOCX_FILES)
 	@echo All files are now up to date
 
 clean :
 	@echo Removing html, md, pdf, docx files...	
-	rm -f $(HTMLWEBTEX_FILES) $(HTML_FILES) $(PDF_FILES) $(MD_FILES) $(DOCX_FILES)
+	rm -f $(HTMLWEBTEX_FILES) $(HTML_FILES) $(PDF_FILES) $(DOCX_FILES)
 	rm -rf *_files figure
 
 %.html : %.Rmd
@@ -26,19 +25,11 @@ clean :
 %-webtex.html : %.Rmd
 	@Rscript renderRmd.R $< html_document_webtex $@
 
-%.md : %.Rmd
-	cp $< $@
-	@sed -i 's/```{r.*/``` code/g' $@
-	@sed -i 's/```{python.*/``` code/g' $@
-
 %.pdf : %.Rmd
 	@Rscript renderRmd.R $< pdf_document $@
 
 %.docx : %.Rmd
 	@Rscript renderRmd.R $< word_document $@
-
-%.ipynb : %.md
-	pandoc $< -o $@
 
 data: 
 	node problems.js > data.json

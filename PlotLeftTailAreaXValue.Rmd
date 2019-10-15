@@ -1,0 +1,36 @@
+---
+title: "Plot Right Tail Area X-Value"
+params:
+  x: 22.2
+  mu: 23
+  sigma: 4
+jupyter:
+  kernelspec:
+    display_name: R
+    language: R
+    name: ir
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(include=FALSE)
+```
+
+```{r params}
+if(!exists("params")) {
+    params<-list(x=22.2, mu=23, sigma=4)
+}
+x<-params$x
+mu<-params$mu
+sigma<-params$sigma
+```
+
+```{r plotsetup}
+#
+source("graphics_utils.R")
+```
+
+Here is a graph of the right tail area for $x=`r x`$ when $\mu = `r mu`$ and $\sigma=`r sigma`$:
+
+```{r area, include=TRUE, echo=FALSE, fig.align="center", fig.width=4, fig.height=2.5} 
+normal_draw_left_tail_area(x,mu,sigma)
+```

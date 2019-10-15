@@ -4,6 +4,7 @@
 .Ruserdata
 *.html
 *.pdf
+*.ipynb
 *.docx
 *.md
 !opensInOtherWindow.html
