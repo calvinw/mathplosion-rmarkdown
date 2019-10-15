@@ -160,185 +160,247 @@
       },
       {
         "id": 40,
-        "name": "PlotLeftTailAreaZValue",
+        "name": "PlotLeftTailAreaXValue",
         "children": [
           {
             "id": 41,
-            "name": "PlotLeftTailAreaZValue.Rmd",
+            "name": "PlotLeftTailAreaXValue.Rmd",
             "file": "Rmd"
           },
           {
             "id": 42,
-            "name": "PlotLeftTailAreaZValue.html",
+            "name": "PlotLeftTailAreaXValue.html",
             "file": "html"
           },
           {
             "id": 43,
-            "name": "PlotLeftTailAreaZValue-webtex.html",
+            "name": "PlotLeftTailAreaXValue-webtex.html",
             "file": "webtex"
           },
           {
             "id": 44,
-            "name": "PlotLeftTailAreaZValue.pdf",
+            "name": "PlotLeftTailAreaXValue.pdf",
             "file": "pdf"
           },
           {
             "id": 45,
-            "name": "PlotLeftTailAreaZValue.docx",
+            "name": "PlotLeftTailAreaXValue.docx",
             "file": "docx"
           }
         ]
       },
       {
         "id": 46,
-        "name": "PlotRightTailAreaZValue",
+        "name": "PlotLeftTailAreaZValue",
         "children": [
           {
             "id": 47,
-            "name": "PlotRightTailAreaZValue.Rmd",
+            "name": "PlotLeftTailAreaZValue.Rmd",
             "file": "Rmd"
           },
           {
             "id": 48,
-            "name": "PlotRightTailAreaZValue.html",
+            "name": "PlotLeftTailAreaZValue.html",
             "file": "html"
           },
           {
             "id": 49,
-            "name": "PlotRightTailAreaZValue-webtex.html",
+            "name": "PlotLeftTailAreaZValue-webtex.html",
             "file": "webtex"
           },
           {
             "id": 50,
-            "name": "PlotRightTailAreaZValue.pdf",
+            "name": "PlotLeftTailAreaZValue.pdf",
             "file": "pdf"
           },
           {
             "id": 51,
-            "name": "PlotRightTailAreaZValue.docx",
+            "name": "PlotLeftTailAreaZValue.docx",
             "file": "docx"
           }
         ]
       },
       {
         "id": 52,
-        "name": "StdNormalFindAreaBetween",
+        "name": "PlotRightTailAreaXValue",
         "children": [
           {
             "id": 53,
-            "name": "StdNormalFindAreaBetween.Rmd",
+            "name": "PlotRightTailAreaXValue.Rmd",
             "file": "Rmd"
           },
           {
             "id": 54,
-            "name": "StdNormalFindAreaBetween.html",
+            "name": "PlotRightTailAreaXValue.html",
             "file": "html"
           },
           {
             "id": 55,
-            "name": "StdNormalFindAreaBetween-webtex.html",
+            "name": "PlotRightTailAreaXValue-webtex.html",
             "file": "webtex"
           },
           {
             "id": 56,
-            "name": "StdNormalFindAreaBetween.pdf",
+            "name": "PlotRightTailAreaXValue.pdf",
             "file": "pdf"
           },
           {
             "id": 57,
-            "name": "StdNormalFindAreaBetween.docx",
+            "name": "PlotRightTailAreaXValue.docx",
             "file": "docx"
           }
         ]
       },
       {
         "id": 58,
-        "name": "StdNormalShadedArea",
+        "name": "PlotRightTailAreaZValue",
         "children": [
           {
             "id": 59,
-            "name": "StdNormalShadedArea.Rmd",
+            "name": "PlotRightTailAreaZValue.Rmd",
             "file": "Rmd"
           },
           {
             "id": 60,
-            "name": "StdNormalShadedArea.html",
+            "name": "PlotRightTailAreaZValue.html",
             "file": "html"
           },
           {
             "id": 61,
-            "name": "StdNormalShadedArea-webtex.html",
+            "name": "PlotRightTailAreaZValue-webtex.html",
             "file": "webtex"
           },
           {
             "id": 62,
-            "name": "StdNormalShadedArea.pdf",
+            "name": "PlotRightTailAreaZValue.pdf",
             "file": "pdf"
           },
           {
             "id": 63,
-            "name": "StdNormalShadedArea.docx",
+            "name": "PlotRightTailAreaZValue.docx",
             "file": "docx"
           }
         ]
       },
       {
         "id": 64,
-        "name": "Table",
+        "name": "StdNormalFindAreaBetween",
         "children": [
           {
             "id": 65,
-            "name": "Table.Rmd",
+            "name": "StdNormalFindAreaBetween.Rmd",
             "file": "Rmd"
           },
           {
             "id": 66,
-            "name": "Table.html",
+            "name": "StdNormalFindAreaBetween.html",
             "file": "html"
           },
           {
             "id": 67,
-            "name": "Table-webtex.html",
+            "name": "StdNormalFindAreaBetween-webtex.html",
             "file": "webtex"
           },
           {
             "id": 68,
-            "name": "Table.pdf",
+            "name": "StdNormalFindAreaBetween.pdf",
             "file": "pdf"
           },
           {
             "id": 69,
-            "name": "Table.docx",
+            "name": "StdNormalFindAreaBetween.docx",
             "file": "docx"
           }
         ]
       },
       {
         "id": 70,
-        "name": "Test",
+        "name": "StdNormalShadedArea",
         "children": [
           {
             "id": 71,
-            "name": "Test.Rmd",
+            "name": "StdNormalShadedArea.Rmd",
             "file": "Rmd"
           },
           {
             "id": 72,
-            "name": "Test.html",
+            "name": "StdNormalShadedArea.html",
             "file": "html"
           },
           {
             "id": 73,
-            "name": "Test-webtex.html",
+            "name": "StdNormalShadedArea-webtex.html",
             "file": "webtex"
           },
           {
             "id": 74,
-            "name": "Test.pdf",
+            "name": "StdNormalShadedArea.pdf",
             "file": "pdf"
           },
           {
             "id": 75,
+            "name": "StdNormalShadedArea.docx",
+            "file": "docx"
+          }
+        ]
+      },
+      {
+        "id": 76,
+        "name": "Table",
+        "children": [
+          {
+            "id": 77,
+            "name": "Table.Rmd",
+            "file": "Rmd"
+          },
+          {
+            "id": 78,
+            "name": "Table.html",
+            "file": "html"
+          },
+          {
+            "id": 79,
+            "name": "Table-webtex.html",
+            "file": "webtex"
+          },
+          {
+            "id": 80,
+            "name": "Table.pdf",
+            "file": "pdf"
+          },
+          {
+            "id": 81,
+            "name": "Table.docx",
+            "file": "docx"
+          }
+        ]
+      },
+      {
+        "id": 82,
+        "name": "Test",
+        "children": [
+          {
+            "id": 83,
+            "name": "Test.Rmd",
+            "file": "Rmd"
+          },
+          {
+            "id": 84,
+            "name": "Test.html",
+            "file": "html"
+          },
+          {
+            "id": 85,
+            "name": "Test-webtex.html",
+            "file": "webtex"
+          },
+          {
+            "id": 86,
+            "name": "Test.pdf",
+            "file": "pdf"
+          },
+          {
+            "id": 87,
             "name": "Test.docx",
             "file": "docx"
           }
